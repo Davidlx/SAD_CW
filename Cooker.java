@@ -499,7 +499,9 @@ public class Cooker extends JFrame
    {
       Point pt = obj.getPoint();
       // find a place to put the new object, fixed for testing
-      pt.translate(50, 50);
+      obj.validate();
+      Point nextpt = workspace.getFreePosition(obj.preferredSize());
+      pt.translate(nextpt.x, nextpt.y);
       workspace.add(obj, pt);
       workspace.invalidate();
    }

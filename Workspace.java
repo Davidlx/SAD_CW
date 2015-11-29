@@ -279,4 +279,56 @@ class Workspace extends JPanel
 	 traceMessage.append(t.toString() + "\n");
       return traceMessage.toString();
    }
+
+   public Point getFreePosition(Dimension comSize){
+      int compCount = getComponentCount();
+      int height = comSize.height;
+      int width = comSize.width;
+      int padding = 10;
+
+      Point returnPoint = new Point(10,10);
+
+      System.out.println(comSize);
+      WorkspaceObject[] objs = new WorkspaceObject[compCount];
+      for(int i = 0; i < compCount; i++){
+         objs[i] = (WorkspaceObject)getComponent(i);
+
+         Dimension temp_size = objs[i].getSize();
+         int posi_x = objs[i].getX();
+         int posi_y = objs[i].getY();
+
+         //if is overlapping
+         if (isOverLapping(comSize,returnPoint.x,returnPoint.y,temp_size,posi_x,posi_y,padding)) {
+            if (objs[i].getX()>objs[i].getY()) {
+               returnPoint.setLocation(objs[i].getX(),objs[i].getY()+temp_size.getHeight()+padding);
+            }else{
+               returnPoint.setLocation(objs[i].getX()+temp_size.getWidth()+padding,objs[i].getY());
+            }
+         }
+
+         System.out.println(objs[i].getSize()+" "+objs[i].getX()+" "+objs[i].getY());
+      }
+
+      return returnPoint;
+   }
+
+
+   public boolean isOverLapping(Dimension size, int x, int y, Dimension size2, int x2, int y2, int padding){
+      if (x+size.width+padding>x2){
+         return true;
+      }
+      if (x2+size2.width+padding>x){
+         return true;
+      }
+      if (y+size.height+padding>y2){
+         return true;
+      }
+      if (y2+size2.height+padding>y){
+         return true;
+      }
+         
+
+      return false;
+   }
+
 }
