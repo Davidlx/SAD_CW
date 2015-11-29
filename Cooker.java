@@ -32,6 +32,7 @@ public class Cooker extends JFrame
    SGTransform.Scale zoomNode;
    JSlider zoomSlider;
    javax.swing.Timer scrollerTimer;
+   private JSplitPane splitPane;
 
    public Cooker()
    {
@@ -40,6 +41,8 @@ public class Cooker extends JFrame
       SwingUtilities.invokeLater(new Runnable() {
 	 public void run()
 	 {
+	 	Component partsPanel = null;
+	 	Component operationView = null;
 	    if(useZoomer)
 	    {
 	       // with lightweight menus the highlight/mouse position coordination is lost
@@ -50,7 +53,8 @@ public class Cooker extends JFrame
 	    setJMenuBar(createMenus());
       
 	    setLayout(new BorderLayout());
-	    getContentPane().add(createPartsPanel(), BorderLayout.EAST);
+	    //getContentPane().add(createPartsPanel(), BorderLayout.EAST);
+	    partsPanel = createPartsPanel();
 	    
 	    workspace = new Workspace();
 
@@ -67,13 +71,21 @@ public class Cooker extends JFrame
 	       scenePanel.setScene(zoomNode);
 	       
 	       scroller = new JScrollPane(scenePanel);
-	       getContentPane().add(scroller, BorderLayout.CENTER);
+	       //getContentPane().add(scroller, BorderLayout.CENTER);
+	       operationView = scroller;
 	    }
 	    else
 	    {
 	       scroller = new JScrollPane(workspace);
-	       getContentPane().add(scroller, BorderLayout.CENTER);
+	       //getContentPane().add(scroller, BorderLayout.CENTER);
+	       operationView = scroller;
 	    }
+	    splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT,
+                                   operationView, partsPanel);
+	    splitPane.setResizeWeight(0.5);
+        splitPane.setOneTouchExpandable(true);
+        splitPane.setContinuousLayout(true);
+	    getContentPane().add(splitPane,BorderLayout.CENTER);
 	    
 	    if(useZoomer)
 	    {
@@ -91,7 +103,6 @@ public class Cooker extends JFrame
 	       });
 	       getContentPane().add(zoomSlider, BorderLayout.SOUTH);
 	    }
-	    
 	    setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
 	    addWindowListener(new WindowAdapter() {
 	       public void windowClosing(WindowEvent e)
