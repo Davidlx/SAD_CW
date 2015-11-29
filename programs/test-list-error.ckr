@@ -1,0 +1,78 @@
+<workspace checksum="2fe10437-5387-4473-abd5-87223a8bc674">
+<algorithm name="sumList">
+<formalparams count="1">
+<param name="lst"/>
+</formalparams>
+<body>
+<if>
+<condition>
+<listisempty>
+<varref value="lst" />
+</listisempty>
+</condition>
+<tbranch>
+<return>
+<literalinteger value="0" />
+</return>
+</tbranch>
+<fbranch>
+<return>
+<addition>
+<loperand>
+<listvalue>
+<varref value="lst" />
+</listvalue>
+</loperand>
+<roperand>
+<call name="sumList">
+<actualparams count="1">
+<actualparam>
+<listtail>
+<varref value="lst" />
+</listtail>
+</actualparam>
+</actualparams>
+</call>
+</roperand>
+</addition>
+</return>
+</fbranch>
+</if>
+</body>
+</algorithm>
+<call name="sumList">
+<actualparams count="1">
+<actualparam>
+<listcons>
+<loperand>
+<literalinteger value="1" />
+</loperand>
+<roperand>
+<listcons>
+<loperand>
+<literalinteger value="2" />
+</loperand>
+<roperand>
+<listcons>
+<loperand>
+<literalinteger value="3" />
+</loperand>
+<roperand>
+<listcons>
+<loperand>
+<literalinteger value="4" />
+</loperand>
+<roperand>
+<nillist />
+</roperand>
+</listcons>
+</roperand>
+</listcons>
+</roperand>
+</listcons>
+</roperand>
+</listcons>
+</actualparam>
+</actualparams>
+</call>
+</workspace>

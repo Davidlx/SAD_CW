@@ -1,0 +1,55 @@
+<workspace checksum="998fc75f-dcaf-49f3-9ba7-5a6efe818113">
+<algorithm name="test">
+<formalparams count="0">
+</formalparams>
+<body>
+<if>
+<condition>
+<equals>
+<loperand>
+<division>
+<loperand>
+<multiplication>
+<loperand>
+<addition>
+<loperand>
+<literalinteger value="2" />
+</loperand>
+<roperand>
+<literalinteger value="3" />
+</roperand>
+</addition>
+</loperand>
+<roperand>
+<literalinteger value="6" />
+</roperand>
+</multiplication>
+</loperand>
+<roperand>
+<literalinteger value="10" />
+</roperand>
+</division>
+</loperand>
+<roperand>
+<literalinteger value="3" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<return>
+<literalboolean value="true" />
+</return>
+</tbranch>
+<fbranch>
+<return>
+<literalboolean value="false" />
+</return>
+</fbranch>
+</if>
+</body>
+</algorithm>
+<call name="test">
+<actualparams count="0">
+</actualparams>
+</call>
+</workspace>

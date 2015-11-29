@@ -1,0 +1,547 @@
+<workspace checksum="abf4f9ab-833a-412d-bb62-d0192595c5e8">
+<algorithm name="rainfall">
+<formalparams count="0">
+</formalparams>
+<body>
+<statementsequence count="2">
+<smt>
+<vardecl value="x">
+<input>
+<literalstring value="please enter month number (1~12)" />
+</input>
+</vardecl>
+</smt>
+<smt>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="x" />
+</loperand>
+<roperand>
+<literalinteger value="1" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<statementsequence count="1">
+<smt>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="m" />
+</loperand>
+<roperand>
+<literalinteger value="0" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<varassign value="a">
+<input>
+<literalstring value="enter rainfall for January  ( mm.)" />
+</input>
+</varassign>
+</tbranch>
+<fbranch>
+<print>
+<literalstring value="Sorry, there¡¯s already snowfall in this month. If you want to change to rainfall, go back and change snowfall to ¡®0¡¯." />
+</print>
+</fbranch>
+</if>
+</smt>
+</statementsequence>
+</tbranch>
+<fbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="x" />
+</loperand>
+<roperand>
+<literalinteger value="2" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<statementsequence count="1">
+<smt>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="n" />
+</loperand>
+<roperand>
+<literalinteger value="0" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<varassign value="b">
+<input>
+<literalstring value="enter rainfall for February ( mm.)" />
+</input>
+</varassign>
+</tbranch>
+<fbranch>
+<print>
+<literalstring value="Sorry, there¡¯s already snowfall in this month. If you want to change to rainfall, go back and change snowfall to ¡®0¡¯." />
+</print>
+</fbranch>
+</if>
+</smt>
+</statementsequence>
+</tbranch>
+<fbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="x" />
+</loperand>
+<roperand>
+<literalinteger value="3" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<statementsequence count="1">
+<smt>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="o" />
+</loperand>
+<roperand>
+<literalinteger value="0" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<varassign value="c">
+<input>
+<literalstring value="enter rainfall for March ( mm.)" />
+</input>
+</varassign>
+</tbranch>
+<fbranch>
+<print>
+<literalstring value="Sorry, there¡¯s already snowfall in this month. If you want to change to rainfall, go back and change snowfall to ¡®0¡¯." />
+</print>
+</fbranch>
+</if>
+</smt>
+</statementsequence>
+</tbranch>
+<fbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="x" />
+</loperand>
+<roperand>
+<literalinteger value="4" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<statementsequence count="1">
+<smt>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="p" />
+</loperand>
+<roperand>
+<literalinteger value="0" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<varassign value="d">
+<input>
+<literalstring value="enter rainfall for April ( mm.)" />
+</input>
+</varassign>
+</tbranch>
+<fbranch>
+<print>
+<literalstring value="Sorry, there¡¯s already snowfall in this month. If you want to change to rainfall, go back and change snowfall to ¡®0¡¯." />
+</print>
+</fbranch>
+</if>
+</smt>
+</statementsequence>
+</tbranch>
+<fbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="x" />
+</loperand>
+<roperand>
+<literalinteger value="5" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<statementsequence count="1">
+<smt>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="q" />
+</loperand>
+<roperand>
+<literalinteger value="0" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<varassign value="e">
+<input>
+<literalstring value="enter rainfall for May ( mm.)" />
+</input>
+</varassign>
+</tbranch>
+<fbranch>
+<print>
+<literalstring value="Sorry, there¡¯s already snowfall in this month. If you want to change to rainfall, go back and change snowfall to ¡®0¡¯." />
+</print>
+</fbranch>
+</if>
+</smt>
+</statementsequence>
+</tbranch>
+<fbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="x" />
+</loperand>
+<roperand>
+<literalinteger value="6" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<statementsequence count="1">
+<smt>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="r" />
+</loperand>
+<roperand>
+<literalinteger value="0" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<varassign value="f">
+<input>
+<literalstring value="enter rainfall for June ( mm.)" />
+</input>
+</varassign>
+</tbranch>
+<fbranch>
+<print>
+<literalstring value="Sorry, there¡¯s already snowfall in this month. If you want to change to rainfall, go back and change snowfall to ¡®0¡¯." />
+</print>
+</fbranch>
+</if>
+</smt>
+</statementsequence>
+</tbranch>
+<fbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="x" />
+</loperand>
+<roperand>
+<literalinteger value="7" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<statementsequence count="1">
+<smt>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="s" />
+</loperand>
+<roperand>
+<literalinteger value="0" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<varassign value="g">
+<input>
+<literalstring value="enter rainfall for July ( mm.)" />
+</input>
+</varassign>
+</tbranch>
+<fbranch>
+<print>
+<literalstring value="Sorry, there¡¯s already snowfall in this month. If you want to change to rainfall, go back and change snowfall to ¡®0¡¯." />
+</print>
+</fbranch>
+</if>
+</smt>
+</statementsequence>
+</tbranch>
+<fbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="x" />
+</loperand>
+<roperand>
+<literalinteger value="8" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<statementsequence count="1">
+<smt>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="t" />
+</loperand>
+<roperand>
+<literalinteger value="0" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<varassign value="h">
+<input>
+<literalstring value="enter rainfall for Auguest ( mm.)" />
+</input>
+</varassign>
+</tbranch>
+<fbranch>
+<print>
+<literalstring value="Sorry, there¡¯s already snowfall in this month. If you want to change to rainfall, go back and change snowfall to ¡®0¡¯." />
+</print>
+</fbranch>
+</if>
+</smt>
+</statementsequence>
+</tbranch>
+<fbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="x" />
+</loperand>
+<roperand>
+<literalinteger value="9" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<statementsequence count="1">
+<smt>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="u" />
+</loperand>
+<roperand>
+<literalinteger value="0" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<varassign value="i">
+<input>
+<literalstring value="enter rainfall for September ( mm.)" />
+</input>
+</varassign>
+</tbranch>
+<fbranch>
+<print>
+<literalstring value="Sorry, there¡¯s already snowfall in this month. If you want to change to rainfall, go back and change snowfall to ¡®0¡¯." />
+</print>
+</fbranch>
+</if>
+</smt>
+</statementsequence>
+</tbranch>
+<fbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="x" />
+</loperand>
+<roperand>
+<literalinteger value="10" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<statementsequence count="1">
+<smt>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="v" />
+</loperand>
+<roperand>
+<literalinteger value="0" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<varassign value="j">
+<input>
+<literalstring value="enter rainfall for October ( mm.)" />
+</input>
+</varassign>
+</tbranch>
+<fbranch>
+<print>
+<literalstring value="Sorry, there¡¯s already snowfall in this month. If you want to change to rainfall, go back and change snowfall to ¡®0¡¯." />
+</print>
+</fbranch>
+</if>
+</smt>
+</statementsequence>
+</tbranch>
+<fbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="x" />
+</loperand>
+<roperand>
+<literalinteger value="11" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<statementsequence count="1">
+<smt>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="w" />
+</loperand>
+<roperand>
+<literalinteger value="0" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<varassign value="k">
+<input>
+<literalstring value="enter rainfall for Novenber ( mm.)" />
+</input>
+</varassign>
+</tbranch>
+<fbranch>
+<print>
+<literalstring value="Sorry, there¡¯s already snowfall in this month. If you want to change to rainfall, go back and change snowfall to ¡®0¡¯." />
+</print>
+</fbranch>
+</if>
+</smt>
+</statementsequence>
+</tbranch>
+<fbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="x" />
+</loperand>
+<roperand>
+<literalinteger value="12" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<statementsequence count="1">
+<smt>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="x'" />
+</loperand>
+<roperand>
+<literalinteger value="0" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<varassign value="l">
+<input>
+<literalstring value="enter rainfall for December ( mm.)" />
+</input>
+</varassign>
+</tbranch>
+<fbranch>
+<print>
+<literalstring value="Sorry, there¡¯s already snowfall in this month. If you want to change to rainfall, go back and change snowfall to ¡®0¡¯." />
+</print>
+</fbranch>
+</if>
+</smt>
+</statementsequence>
+</tbranch>
+<fbranch>
+</fbranch>
+</if>
+</fbranch>
+</if>
+</fbranch>
+</if>
+</fbranch>
+</if>
+</fbranch>
+</if>
+</fbranch>
+</if>
+</fbranch>
+</if>
+</fbranch>
+</if>
+</fbranch>
+</if>
+</fbranch>
+</if>
+</fbranch>
+</if>
+</fbranch>
+</if>
+</smt>
+</statementsequence>
+</body>
+</algorithm>
+</workspace>

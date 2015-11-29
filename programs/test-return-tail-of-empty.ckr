@@ -1,0 +1,29 @@
+<workspace checksum="a76d0784-4b6e-4b04-8232-7a53462adb20">
+<algorithm name="f">
+<formalparams count="0">
+</formalparams>
+<body>
+<if>
+<condition>
+<literalboolean value="false" />
+</condition>
+<tbranch>
+<return>
+<literalinteger value="2" />
+</return>
+</tbranch>
+<fbranch>
+<return>
+<listtail>
+<nillist />
+</listtail>
+</return>
+</fbranch>
+</if>
+</body>
+</algorithm>
+<call name="f">
+<actualparams count="0">
+</actualparams>
+</call>
+</workspace>

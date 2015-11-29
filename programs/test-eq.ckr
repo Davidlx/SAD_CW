@@ -1,0 +1,18 @@
+<workspace checksum="3c31799d-813b-4c06-b1d7-6dff08914450">
+  <algorithm name="eq">
+    <formalparams count="0">
+    </formalparams>
+    <body>
+      <print>
+	<equals>
+	  <loperand>
+	    <literalinteger value="5" />
+	  </loperand>
+	  <roperand>
+	    <literalinteger value="6" />
+	  </roperand>
+	</equals>
+      </print>
+    </body>
+  </algorithm>
+</workspace>

@@ -1,0 +1,85 @@
+Requested feature for version 2
+===============================
+
+- filtering for invalid text such as smart quotes which invalidate the XML saves
+
++ zip'ed file format to avoid file corruption via email (OWA specifically)
+
+- better zooming interface
+
++ minimisation of algorithms to headers
+
+- declared types for parameters and return values
+
++ tree datatype
+
++ expanded graphics type, or get rid of it
+
+- runtime display of changing variable values, therefore also either step-by-step execution or slow-mo execution
+
++ highlighting of blocks causing program errors
+
++ more compact, user-friendly error messages
+
++ categorisation of blocks
+
++ proper distribution, probably JAR based
+
+- better test suite
+
+- multi-page printing for algorithms, sort DPI guessing for printers
+
++ ability to stop user program running
+
++ number keypad on literal integer input to help for touch input, something for literal boolean too.
+
+- BUG fix issue throughout getWorkspaceObjectForPart where there is no check that sink.getContainedPart() is not itself null.
+
++ BUG Only a single output window should appear.  Currently they are repeatedly created.  Is this actually a bug, or a feature to compare output of multiple runs?? NOT A BUG.
+
+- BUG Make sure all split actions are happening properly.
+  This now seems mostly fixed.  Need to check Algorithm and Call in RAW, and split() listener in each workspace object subclass.
+
+- BUG100 run button on CALL block sometimes disappears when collapsed and expanded?
+
++ show alg name even when collapsed
+
++ BUG101 "new" menu option should show lost work warning
+
++ BUG102 icons don't appear in jar
+
++ BUG103 window starts off screen due to hard-coded position for testing
+
+- BUG104 JCompactablePanel should have a min width equal to header button width
+
++ BUG105 icons don't work for JCompactablePanel; need to load resources via class but is static
+
++ BUG106 add tooltip descriptions to new launcher headings, and to tree blocks
+
++ BUG107 StatementSequence does not resize correctly when adding new lines, until you move it.
+
+- BUG108 make the sidebar slidy instead of horizontal scollbar.
+
++ FEA100 Add menu items to expand or collapse all top-level blocks in one go.
+
++ BUG109 algorithm formal args panel doesn't redraw correctly when adding new args.
+
+- BUG110 collapsing a block immediately after creation, without moving it, leaves it at it's old size until moved.
+
++ BUG111 can add non-trees as subtrees in Node block.  Difficult to check because combined part does not have to be a node by itself, it could be an algorithm returning a node, etc.
+
+- BUG112 when printing in b&w, expression and statement colours appear the same.
+
++ BUG113 trees lazy evaluate their internal values (mistakingly), so returning a tree which contains a variable reference results in the reference not being found because the stack frame has already popped.  Need to re-write trees to be had TreeXXX classes and actual storage classes.
+
+- BUG114 make sure that all XXXWorkspaceObjects throw NotEnoughArgumentsExceptions if they have empty sinks.  Think all done except Algorithm and Call.
+
+- BUG115 create algorithm with 1 parameter.  create call block to it.  change algorithm to 3 parameters.  call block will not change.  running the program gives a generic error about empty block, but visually the call block only has the original 1 parameter space.
+
++ BUG116 literal strings can include double-quotes that breaks loading.
+
+- BUG117 check all string handling (alg names, literals, vars, etc) do not have smart quotes bug or BUG116 or any other XML escaped-required chars: & -> &amp;  < -> &lt;  > -> &gt;   " -> &quot;   ' -> &apos;
+
+- BUG 118 enable printing for the HelpViewer
+
+- Check printing works correctly when main display zoomed.

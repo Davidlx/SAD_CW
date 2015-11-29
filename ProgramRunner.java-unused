@@ -1,0 +1,92 @@
+package org.scotek.vpl;
+
+import javax.swing.*;
+import java.util.concurrent.*;
+
+class ProgramRunner extends SwingWorker<Object, Object>
+{
+   Call call;			// The algorithm call the starts the program
+   
+   public ProgramRunner(Call c)
+   {
+      call = c;
+   }
+
+
+   protected Object doInBackground()
+   {
+      try
+      {
+	 Object res = call.getValue();
+	 JOptionPane.showMessageDialog(null, "" + res,
+				       "Program return value", JOptionPane.INFORMATION_MESSAGE);
+      }
+      catch(ArithmeticException ae)
+      {
+	 JOptionPane.showMessageDialog(null, "The program has crashed because of an arithmetic error.\nUsually this means you have devided by zero!",
+				       "Error", JOptionPane.ERROR_MESSAGE);
+      }
+      catch(NotEnoughArgumentsException neae)
+      {
+	 JOptionPane.showMessageDialog(null, "The program has crashed because you did not give values in all the places that require them.\nDid you forget to give an algorithm or operator a value for a parameter?",
+				       "Error", JOptionPane.ERROR_MESSAGE);
+      }
+      catch(UndefinedVariableException uve)
+      {
+	 JOptionPane.showMessageDialog(null, "The program has tried to access a variable via a variable reference which is not valid.\nThis is either because the variable name is wrong, or the variable is not accessible from the place you tried to access it from.",
+				       "Error", JOptionPane.ERROR_MESSAGE);
+      }
+      catch(InvalidArgumentTypeException iate)
+      {
+	 BackgroundFlasher targetThread = CallWorkspaceObject.createBGFFromException(iate.getErrorLocation());
+	 targetThread.start();
+	 
+	 String extra = "";
+	 if(iate.getMessage() != null)
+	    extra = iate.getMessage();
+	 JOptionPane.showMessageDialog(null, "The program crashed because a function recieved a value as a parameter which was not permitted:\n\n" + extra,
+				       "Error", JOptionPane.ERROR_MESSAGE);
+	 
+	 targetThread.stopFlashing();
+      }
+      catch(ExecutionAbortedException eae)
+      {
+	 // the user has aborted the execution of the program while it is running
+	 JOptionPane.showMessageDialog(null, "The execution of the program has been aborted by the user.", "Execution Aborted", JOptionPane.INFORMATION_MESSAGE);
+      }
+      catch(StackOverflowError soe) // THIS WORKING DEPENDS ENTIRELY ON WHICH JVM AND SITUATION
+      {
+	 JOptionPane.showMessageDialog(null, "The program has crashed because it has made too may recusive calls without a return.\nRe-design your program to avoid so many un-returned recursive calls.\n\nNote that Cooker may behave unpredicatably after this error and you may have to quit and restart.", "Error", JOptionPane.ERROR_MESSAGE);
+      }
+      catch(Exception allExp)
+      {
+	 // TODO want to put stack trace inside a jtextarea but will need a custom dialog for this.
+	 System.err.println("General exception: \n" + Workspace.prettyStackTrace(allExp));
+	 JOptionPane.showMessageDialog(null, "A serious error happened in your program which caused it to crash.\nUnfortunately, I don't have a more useful error message for you.\nJust double-check everything in your program.\n\nIf you can repeat this error, please inform one of the instructors so we can provide a better error message.\nTechnical information about the error has been printed to the console for the instructor; you can ignore this information.\n",
+				       "Error", JOptionPane.ERROR_MESSAGE);
+	 
+      }
+
+      System.err.println("ProgramRunner done");
+      return null;
+   }
+
+
+   public void waitUntilFinished()
+   {
+      try
+      {
+	 get();
+      }
+      catch(InterruptedException ie)
+      {
+	 System.err.println("Interrupted Exception: " +ie);
+	 ie.printStackTrace();
+      }
+      catch(ExecutionException ee)
+      {
+	 System.err.println("Execution Exception: " +ee);
+	 ee.printStackTrace();
+      }
+   }
+}

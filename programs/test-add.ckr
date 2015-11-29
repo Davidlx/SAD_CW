@@ -1,0 +1,29 @@
+<workspace checksum="5c47b440-91f0-4d82-8358-ccb63b0ac6d7">
+<algorithm name="f">
+<formalparams count="0">
+</formalparams>
+<body>
+<print>
+<addition>
+<loperand>
+<literalinteger value="3" />
+</loperand>
+<roperand>
+<addition>
+<loperand>
+<literalinteger value="5" />
+</loperand>
+<roperand>
+<literalinteger value="6" />
+</roperand>
+</addition>
+</roperand>
+</addition>
+</print>
+</body>
+</algorithm>
+<call name="f">
+<actualparams count="0">
+</actualparams>
+</call>
+</workspace>

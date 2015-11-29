@@ -1,0 +1,45 @@
+<workspace checksum="5a7b44c3-7521-44e3-9300-fd9b8317a89e">
+<algorithm name="apples">
+<formalparams count="0">
+</formalparams>
+<body>
+<statementsequence count="4">
+<smt>
+<vardecl value="cost">
+<input>
+<literalstring value="Cost for 1 item?" />
+</input>
+</vardecl>
+</smt>
+<smt>
+<vardecl value="items">
+<input>
+<literalstring value="Number of items?" />
+</input>
+</vardecl>
+</smt>
+<smt>
+<print>
+<literalstring value="Total cost is" />
+</print>
+</smt>
+<smt>
+<print>
+<multiplication>
+<loperand>
+<varref value="cost" />
+</loperand>
+<roperand>
+<varref value="items" />
+</roperand>
+</multiplication>
+</print>
+</smt>
+</statementsequence>
+</body>
+</algorithm>
+<call name="apples">
+<actualparams count="0">
+</actualparams>
+</call>
+</workspace>

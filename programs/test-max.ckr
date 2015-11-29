@@ -1,0 +1,42 @@
+<workspace checksum="2d989cbd-0f04-4e29-9f1d-dce706fffd5b">
+<algorithm name="max">
+<formalparams count="2">
+<param name="a"/>
+<param name="b"/>
+</formalparams>
+<body>
+<if>
+<condition>
+<greater>
+<loperand>
+<varref value="a" />
+</loperand>
+<roperand>
+<varref value="b" />
+</roperand>
+</greater>
+</condition>
+<tbranch>
+<return>
+<varref value="a" />
+</return>
+</tbranch>
+<fbranch>
+<return>
+<varref value="b" />
+</return>
+</fbranch>
+</if>
+</body>
+</algorithm>
+<call name="max">
+<actualparams count="2">
+<actualparam>
+<literalinteger value="12" />
+</actualparam>
+<actualparam>
+<literalinteger value="42" />
+</actualparam>
+</actualparams>
+</call>
+</workspace>

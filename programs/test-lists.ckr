@@ -1,0 +1,102 @@
+<workspace checksum="cf843430-4cd6-4118-a4a4-cdddb2418afc">
+<algorithm name="t1">
+<formalparams count="0">
+</formalparams>
+<body>
+<print>
+<nillist />
+</print>
+</body>
+</algorithm>
+<call name="t1">
+<actualparams count="0">
+</actualparams>
+</call>
+<algorithm name="t2">
+<formalparams count="0">
+</formalparams>
+<body>
+<return>
+<nillist />
+</return>
+</body>
+</algorithm>
+<call name="t2">
+<actualparams count="0">
+</actualparams>
+</call>
+<algorithm name="t3">
+<formalparams count="0">
+</formalparams>
+<body>
+<print>
+<listcons>
+<loperand>
+<literalinteger value="42" />
+</loperand>
+<roperand>
+<nillist />
+</roperand>
+</listcons>
+</print>
+</body>
+</algorithm>
+<call name="t3">
+<actualparams count="0">
+</actualparams>
+</call>
+<algorithm name="t4">
+<formalparams count="0">
+</formalparams>
+<body>
+<return>
+<listcons>
+<loperand>
+<literalinteger value="42" />
+</loperand>
+<roperand>
+<nillist />
+</roperand>
+</listcons>
+</return>
+</body>
+</algorithm>
+<call name="t4">
+<actualparams count="0">
+</actualparams>
+</call>
+<algorithm name="t5">
+<formalparams count="0">
+</formalparams>
+<body>
+<print>
+<listcons>
+<loperand>
+<literalinteger value="41" />
+</loperand>
+<roperand>
+<listcons>
+<loperand>
+<literalinteger value="42" />
+</loperand>
+<roperand>
+<listcons>
+<loperand>
+<literalinteger value="43" />
+</loperand>
+<roperand>
+<nillist />
+</roperand>
+</listcons>
+</roperand>
+</listcons>
+</roperand>
+</listcons>
+</print>
+</body>
+</algorithm>
+<call name="t5">
+<actualparams count="0">
+</actualparams>
+</call>
+</workspace>

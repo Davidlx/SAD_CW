@@ -1,0 +1,156 @@
+/* RawTrees.java
+** Tree support in the RAW language
+** 20090906 scotek created
+*/
+
+package org.scotek.vpl;
+
+class TreeLeaf implements Expression
+{
+   public Object getValue()
+   {
+      return this;
+   }
+
+   public String toString()
+   {
+      return "!";
+   }
+}
+
+class TreeNode implements Expression
+{
+   Expression ltree, rtree;
+   Expression value;
+
+   public void setLeftExpression(Expression e)
+   {
+      ltree = e;
+   }
+   public void setRightExpression(Expression e)
+   {
+      rtree = e;
+   }
+   public void setValueExpression(Expression e)
+   {
+      value = e;
+   }
+
+   public Object getValue()
+   {
+      return this;
+   }
+
+   public String toString()
+   {
+      // BUG temp fixes for BUG111 to make sure ltree, rtree are not invalid values.
+      // The only correct values can be a Node, a List, or an algorithm call returning these.
+      // Cannot just put || tree instanceof Call here because builtins are note Calls!
+      Object lvalue = ltree.getValue();
+      Object rvalue = rtree.getValue();
+
+      if((lvalue instanceof TreeNode || lvalue instanceof TreeLeaf) &&
+	 (rvalue instanceof TreeNode || rvalue instanceof TreeLeaf))
+      {
+	 return "<" + lvalue.toString() + ">" +
+	    value.getValue().toString() +
+	    "<" + rvalue.toString() + ">";
+      }
+      else
+      {
+	 throw new InvalidArgumentTypeException("The left and right subtree values of a Node must be Nodes or Leafs!", this);
+      }
+
+      //return "<" + ltree.getValue().toString() + ">" + value.getValue().toString() + "<" + rtree.getValue().toString() + ">";
+   }
+}
+
+
+class TreeIsLeaf implements Expression
+{
+   Expression exp;
+
+   public void setExpression(Expression e)
+   {
+      exp = e;
+   }
+
+   public Object getValue()
+   {
+      Object val = exp.getValue();
+
+      if(val instanceof TreeLeaf)
+	 return true;
+      else if(val instanceof TreeNode)
+	 return false;
+      else
+	 throw new InvalidArgumentTypeException("Argument to IsLeaf must be a tree", this);
+   }
+}
+
+class TreeValue implements Expression
+{
+   Expression exp;
+   
+   public void setExpression(Expression e)
+   {
+      exp = e;
+   }
+
+   public Object getValue()
+   {
+      Object val = exp.getValue();
+      
+      if(val instanceof TreeNode)
+      {
+	 return ((TreeNode)val).value.getValue();
+      }
+
+      throw new InvalidArgumentTypeException("Argument to Value must be a non-empty tree", this);
+   }
+}
+
+
+class TreeLeft implements Expression
+{
+   Expression exp;
+
+   public void setExpression(Expression e)
+   {
+      exp = e;
+   }
+
+   public Object getValue()
+   {
+      Object val = exp.getValue();
+
+      if(val instanceof TreeNode)
+      {
+	 return ((TreeNode)val).ltree.getValue();
+      }
+      
+      throw new InvalidArgumentTypeException("Argument to Left must be a non-empty tree", this);
+   }
+}
+
+class TreeRight implements Expression
+{
+   Expression exp;
+
+   public void setExpression(Expression e)
+   {
+      exp = e;
+   }
+
+   public Object getValue()
+   {
+      Object val = exp.getValue();
+
+      if(val instanceof TreeNode)
+      {
+	 return ((TreeNode)val).rtree.getValue();
+      }
+      
+      throw new InvalidArgumentTypeException("Argument to Right must be a non-empty tree", this);
+   }
+}

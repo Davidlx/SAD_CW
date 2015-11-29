@@ -1,0 +1,3695 @@
+<workspace checksum="5e83e72b-1f4b-4e2a-a227-983e7686b43b">
+<algorithm name="find">
+<formalparams count="2">
+<param name="x"/>
+<param name="list"/>
+</formalparams>
+<body>
+<statementsequence count="2">
+<smt>
+<while>
+<condition>
+<greater>
+<loperand>
+<varref value="x" />
+</loperand>
+<roperand>
+<literalinteger value="1" />
+</roperand>
+</greater>
+</condition>
+<body>
+<statementsequence count="2">
+<smt>
+<varassign value="x">
+<subtraction>
+<loperand>
+<varref value="x" />
+</loperand>
+<roperand>
+<literalinteger value="1" />
+</roperand>
+</subtraction>
+</varassign>
+</smt>
+<smt>
+<varassign value="list">
+<listtail>
+<varref value="list" />
+</listtail>
+</varassign>
+</smt>
+</statementsequence>
+</body>
+</while>
+</smt>
+<smt>
+<return>
+<listvalue>
+<varref value="list" />
+</listvalue>
+</return>
+</smt>
+</statementsequence>
+</body>
+</algorithm>
+<algorithm name="replace">
+<formalparams count="3">
+<param name="x"/>
+<param name="x1"/>
+<param name="list"/>
+</formalparams>
+<body>
+<statementsequence count="7">
+<smt>
+<vardecl value="a1">
+<literalinteger value="12" />
+</vardecl>
+</smt>
+<smt>
+<vardecl value="list3">
+<nillist />
+</vardecl>
+</smt>
+<smt>
+<while>
+<condition>
+<greater>
+<loperand>
+<varref value="a1" />
+</loperand>
+<roperand>
+<varref value="x" />
+</roperand>
+</greater>
+</condition>
+<body>
+<statementsequence count="2">
+<smt>
+<varassign value="list3">
+<listcons>
+<loperand>
+<call name="find">
+<actualparams count="2">
+<actualparam>
+<varref value="a1" />
+</actualparam>
+<actualparam>
+<varref value="list" />
+</actualparam>
+</actualparams>
+</call>
+</loperand>
+<roperand>
+<varref value="list3" />
+</roperand>
+</listcons>
+</varassign>
+</smt>
+<smt>
+<varassign value="a1">
+<subtraction>
+<loperand>
+<varref value="a1" />
+</loperand>
+<roperand>
+<literalinteger value="1" />
+</roperand>
+</subtraction>
+</varassign>
+</smt>
+</statementsequence>
+</body>
+</while>
+</smt>
+<smt>
+<varassign value="list3">
+<listcons>
+<loperand>
+<varref value="x1" />
+</loperand>
+<roperand>
+<varref value="list3" />
+</roperand>
+</listcons>
+</varassign>
+</smt>
+<smt>
+<varassign value="a1">
+<subtraction>
+<loperand>
+<varref value="x" />
+</loperand>
+<roperand>
+<literalinteger value="1" />
+</roperand>
+</subtraction>
+</varassign>
+</smt>
+<smt>
+<while>
+<condition>
+<greater>
+<loperand>
+<varref value="a1" />
+</loperand>
+<roperand>
+<literalinteger value="0" />
+</roperand>
+</greater>
+</condition>
+<body>
+<statementsequence count="2">
+<smt>
+<varassign value="list3">
+<listcons>
+<loperand>
+<call name="find">
+<actualparams count="2">
+<actualparam>
+<varref value="a1" />
+</actualparam>
+<actualparam>
+<varref value="list" />
+</actualparam>
+</actualparams>
+</call>
+</loperand>
+<roperand>
+<varref value="list3" />
+</roperand>
+</listcons>
+</varassign>
+</smt>
+<smt>
+<varassign value="a1">
+<subtraction>
+<loperand>
+<varref value="a1" />
+</loperand>
+<roperand>
+<literalinteger value="1" />
+</roperand>
+</subtraction>
+</varassign>
+</smt>
+</statementsequence>
+</body>
+</while>
+</smt>
+<smt>
+<return>
+<varref value="list3" />
+</return>
+</smt>
+</statementsequence>
+</body>
+</algorithm>
+<algorithm name="main">
+<formalparams count="0">
+</formalparams>
+<body>
+<statementsequence count="3">
+<smt>
+<vardecl value="list1">
+<listcons>
+<loperand>
+<literalinteger value="0" />
+</loperand>
+<roperand>
+<listcons>
+<loperand>
+<literalinteger value="0" />
+</loperand>
+<roperand>
+<listcons>
+<loperand>
+<literalinteger value="0" />
+</loperand>
+<roperand>
+<listcons>
+<loperand>
+<literalinteger value="0" />
+</loperand>
+<roperand>
+<listcons>
+<loperand>
+<literalinteger value="0" />
+</loperand>
+<roperand>
+<listcons>
+<loperand>
+<literalinteger value="0" />
+</loperand>
+<roperand>
+<listcons>
+<loperand>
+<literalinteger value="0" />
+</loperand>
+<roperand>
+<listcons>
+<loperand>
+<literalinteger value="0" />
+</loperand>
+<roperand>
+<listcons>
+<loperand>
+<literalinteger value="0" />
+</loperand>
+<roperand>
+<listcons>
+<loperand>
+<literalinteger value="0" />
+</loperand>
+<roperand>
+<listcons>
+<loperand>
+<literalinteger value="0" />
+</loperand>
+<roperand>
+<listcons>
+<loperand>
+<literalinteger value="0" />
+</loperand>
+<roperand>
+<nillist />
+</roperand>
+</listcons>
+</roperand>
+</listcons>
+</roperand>
+</listcons>
+</roperand>
+</listcons>
+</roperand>
+</listcons>
+</roperand>
+</listcons>
+</roperand>
+</listcons>
+</roperand>
+</listcons>
+</roperand>
+</listcons>
+</roperand>
+</listcons>
+</roperand>
+</listcons>
+</roperand>
+</listcons>
+</vardecl>
+</smt>
+<smt>
+<vardecl value="list2">
+<listcons>
+<loperand>
+<literalinteger value="0" />
+</loperand>
+<roperand>
+<listcons>
+<loperand>
+<literalinteger value="0" />
+</loperand>
+<roperand>
+<listcons>
+<loperand>
+<literalinteger value="0" />
+</loperand>
+<roperand>
+<listcons>
+<loperand>
+<literalinteger value="0" />
+</loperand>
+<roperand>
+<listcons>
+<loperand>
+<literalinteger value="0" />
+</loperand>
+<roperand>
+<listcons>
+<loperand>
+<literalinteger value="0" />
+</loperand>
+<roperand>
+<listcons>
+<loperand>
+<literalinteger value="0" />
+</loperand>
+<roperand>
+<listcons>
+<loperand>
+<literalinteger value="0" />
+</loperand>
+<roperand>
+<listcons>
+<loperand>
+<literalinteger value="0" />
+</loperand>
+<roperand>
+<listcons>
+<loperand>
+<literalinteger value="0" />
+</loperand>
+<roperand>
+<listcons>
+<loperand>
+<literalinteger value="0" />
+</loperand>
+<roperand>
+<listcons>
+<loperand>
+<literalinteger value="0" />
+</loperand>
+<roperand>
+<nillist />
+</roperand>
+</listcons>
+</roperand>
+</listcons>
+</roperand>
+</listcons>
+</roperand>
+</listcons>
+</roperand>
+</listcons>
+</roperand>
+</listcons>
+</roperand>
+</listcons>
+</roperand>
+</listcons>
+</roperand>
+</listcons>
+</roperand>
+</listcons>
+</roperand>
+</listcons>
+</roperand>
+</listcons>
+</vardecl>
+</smt>
+<smt>
+<call name="menu">
+<actualparams count="2">
+<actualparam>
+<varref value="list1" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</smt>
+</statementsequence>
+</body>
+</algorithm>
+<algorithm name="menu">
+<formalparams count="2">
+<param name="list1"/>
+<param name="list2"/>
+</formalparams>
+<body>
+<statementsequence count="2">
+<smt>
+<vardecl value="x">
+<input>
+<literalstring value="please choose a number: 1---enter rainfall for month, 2---enter snowfall for month, 3---display weather statistics, 4---quit" />
+</input>
+</vardecl>
+</smt>
+<smt>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="x" />
+</loperand>
+<roperand>
+<literalinteger value="1" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<statementsequence count="2">
+<smt>
+<vardecl value="z">
+<input>
+<literalstring value="please enter month number" />
+</input>
+</vardecl>
+</smt>
+<smt>
+<if>
+<condition>
+<equals>
+<loperand>
+<literalinteger value="1" />
+</loperand>
+<roperand>
+<varref value="z" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<call name="find">
+<actualparams count="2">
+<actualparam>
+<varref value="z" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</loperand>
+<roperand>
+<literalinteger value="0" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<statementsequence count="3">
+<smt>
+<vardecl value="a">
+<input>
+<literalstring value="enter rainfall for January" />
+</input>
+</vardecl>
+</smt>
+<smt>
+<varassign value="list1">
+<call name="replace">
+<actualparams count="3">
+<actualparam>
+<varref value="z" />
+</actualparam>
+<actualparam>
+<varref value="a" />
+</actualparam>
+<actualparam>
+<varref value="list1" />
+</actualparam>
+</actualparams>
+</call>
+</varassign>
+</smt>
+<smt>
+<call name="menu">
+<actualparams count="2">
+<actualparam>
+<varref value="list1" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</smt>
+</statementsequence>
+</tbranch>
+<fbranch>
+<statementsequence count="2">
+<smt>
+<print>
+<literalstring value="Sorry, there's already snowfall in this month. If you want to change to rainfall, go back and change snowfall to '0'." />
+</print>
+</smt>
+<smt>
+<call name="menu">
+<actualparams count="2">
+<actualparam>
+<varref value="list1" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</smt>
+</statementsequence>
+</fbranch>
+</if>
+</tbranch>
+<fbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="z" />
+</loperand>
+<roperand>
+<literalinteger value="2" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<call name="find">
+<actualparams count="2">
+<actualparam>
+<varref value="z" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</loperand>
+<roperand>
+<literalinteger value="0" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<statementsequence count="3">
+<smt>
+<vardecl value="b">
+<input>
+<literalstring value="enter rainfall for February" />
+</input>
+</vardecl>
+</smt>
+<smt>
+<varassign value="list1">
+<call name="replace">
+<actualparams count="3">
+<actualparam>
+<varref value="z" />
+</actualparam>
+<actualparam>
+<varref value="b" />
+</actualparam>
+<actualparam>
+<varref value="list1" />
+</actualparam>
+</actualparams>
+</call>
+</varassign>
+</smt>
+<smt>
+<call name="menu">
+<actualparams count="2">
+<actualparam>
+<varref value="list1" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</smt>
+</statementsequence>
+</tbranch>
+<fbranch>
+<statementsequence count="2">
+<smt>
+<print>
+<literalstring value="Sorry, there's already snowfall in this month. If you want to change to rainfall, go back and change snowfall to '0'." />
+</print>
+</smt>
+<smt>
+<call name="menu">
+<actualparams count="2">
+<actualparam>
+<varref value="list1" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</smt>
+</statementsequence>
+</fbranch>
+</if>
+</tbranch>
+<fbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="z" />
+</loperand>
+<roperand>
+<literalinteger value="3" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<call name="find">
+<actualparams count="2">
+<actualparam>
+<varref value="z" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</loperand>
+<roperand>
+<literalinteger value="0" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<statementsequence count="3">
+<smt>
+<vardecl value="c">
+<input>
+<literalstring value="enter rainfall for March" />
+</input>
+</vardecl>
+</smt>
+<smt>
+<varassign value="list1">
+<call name="replace">
+<actualparams count="3">
+<actualparam>
+<varref value="z" />
+</actualparam>
+<actualparam>
+<varref value="c" />
+</actualparam>
+<actualparam>
+<varref value="list1" />
+</actualparam>
+</actualparams>
+</call>
+</varassign>
+</smt>
+<smt>
+<call name="menu">
+<actualparams count="2">
+<actualparam>
+<varref value="list1" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</smt>
+</statementsequence>
+</tbranch>
+<fbranch>
+<statementsequence count="2">
+<smt>
+<print>
+<literalstring value="Sorry, there's already snowfall in this month. If you want to change to rainfall, go back and change snowfall to '0'." />
+</print>
+</smt>
+<smt>
+<call name="menu">
+<actualparams count="2">
+<actualparam>
+<varref value="list1" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</smt>
+</statementsequence>
+</fbranch>
+</if>
+</tbranch>
+<fbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="z" />
+</loperand>
+<roperand>
+<literalinteger value="4" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<call name="find">
+<actualparams count="2">
+<actualparam>
+<varref value="z" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</loperand>
+<roperand>
+<literalinteger value="0" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<statementsequence count="3">
+<smt>
+<vardecl value="d">
+<input>
+<literalstring value="enter rainfall for April" />
+</input>
+</vardecl>
+</smt>
+<smt>
+<varassign value="list1">
+<call name="replace">
+<actualparams count="3">
+<actualparam>
+<varref value="z" />
+</actualparam>
+<actualparam>
+<varref value="d" />
+</actualparam>
+<actualparam>
+<varref value="list1" />
+</actualparam>
+</actualparams>
+</call>
+</varassign>
+</smt>
+<smt>
+<call name="menu">
+<actualparams count="2">
+<actualparam>
+<varref value="list1" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</smt>
+</statementsequence>
+</tbranch>
+<fbranch>
+<statementsequence count="2">
+<smt>
+<print>
+<literalstring value="Sorry, there's already snowfall in this month. If you want to change to rainfall, go back and change snowfall to '0'." />
+</print>
+</smt>
+<smt>
+<call name="menu">
+<actualparams count="2">
+<actualparam>
+<varref value="list1" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</smt>
+</statementsequence>
+</fbranch>
+</if>
+</tbranch>
+<fbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="z" />
+</loperand>
+<roperand>
+<literalinteger value="5" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<call name="find">
+<actualparams count="2">
+<actualparam>
+<varref value="z" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</loperand>
+<roperand>
+<literalinteger value="0" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<statementsequence count="3">
+<smt>
+<vardecl value="e">
+<input>
+<literalstring value="enter rainfall for May" />
+</input>
+</vardecl>
+</smt>
+<smt>
+<varassign value="list1">
+<call name="replace">
+<actualparams count="3">
+<actualparam>
+<varref value="z" />
+</actualparam>
+<actualparam>
+<varref value="e" />
+</actualparam>
+<actualparam>
+<varref value="list1" />
+</actualparam>
+</actualparams>
+</call>
+</varassign>
+</smt>
+<smt>
+<call name="menu">
+<actualparams count="2">
+<actualparam>
+<varref value="list1" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</smt>
+</statementsequence>
+</tbranch>
+<fbranch>
+<statementsequence count="2">
+<smt>
+<print>
+<literalstring value="Sorry, there's already snowfall in this month. If you want to change to rainfall, go back and change snowfall to '0'." />
+</print>
+</smt>
+<smt>
+<call name="menu">
+<actualparams count="2">
+<actualparam>
+<varref value="list1" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</smt>
+</statementsequence>
+</fbranch>
+</if>
+</tbranch>
+<fbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="z" />
+</loperand>
+<roperand>
+<literalinteger value="6" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<call name="find">
+<actualparams count="2">
+<actualparam>
+<varref value="z" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</loperand>
+<roperand>
+<literalinteger value="0" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<statementsequence count="3">
+<smt>
+<vardecl value="f">
+<input>
+<literalstring value="enter rainfall for June" />
+</input>
+</vardecl>
+</smt>
+<smt>
+<varassign value="list1">
+<call name="replace">
+<actualparams count="3">
+<actualparam>
+<varref value="z" />
+</actualparam>
+<actualparam>
+<varref value="f" />
+</actualparam>
+<actualparam>
+<varref value="list1" />
+</actualparam>
+</actualparams>
+</call>
+</varassign>
+</smt>
+<smt>
+<call name="menu">
+<actualparams count="2">
+<actualparam>
+<varref value="list1" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</smt>
+</statementsequence>
+</tbranch>
+<fbranch>
+<statementsequence count="2">
+<smt>
+<print>
+<literalstring value="Sorry, there's already snowfall in this month. If you want to change to rainfall, go back and change snowfall to '0'." />
+</print>
+</smt>
+<smt>
+<call name="menu">
+<actualparams count="2">
+<actualparam>
+<varref value="list1" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</smt>
+</statementsequence>
+</fbranch>
+</if>
+</tbranch>
+<fbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="z" />
+</loperand>
+<roperand>
+<literalinteger value="7" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<call name="find">
+<actualparams count="2">
+<actualparam>
+<varref value="z" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</loperand>
+<roperand>
+<literalinteger value="0" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<statementsequence count="3">
+<smt>
+<vardecl value="g">
+<input>
+<literalstring value="enter rainfall for July" />
+</input>
+</vardecl>
+</smt>
+<smt>
+<varassign value="list1">
+<call name="replace">
+<actualparams count="3">
+<actualparam>
+<varref value="z" />
+</actualparam>
+<actualparam>
+<varref value="g" />
+</actualparam>
+<actualparam>
+<varref value="list1" />
+</actualparam>
+</actualparams>
+</call>
+</varassign>
+</smt>
+<smt>
+<call name="menu">
+<actualparams count="2">
+<actualparam>
+<varref value="list1" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</smt>
+</statementsequence>
+</tbranch>
+<fbranch>
+<statementsequence count="2">
+<smt>
+<print>
+<literalstring value="Sorry, there's already snowfall in this month. If you want to change to rainfall, go back and change snowfall to '0'." />
+</print>
+</smt>
+<smt>
+<call name="menu">
+<actualparams count="2">
+<actualparam>
+<varref value="list1" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</smt>
+</statementsequence>
+</fbranch>
+</if>
+</tbranch>
+<fbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="z" />
+</loperand>
+<roperand>
+<literalinteger value="8" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<call name="find">
+<actualparams count="2">
+<actualparam>
+<varref value="z" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</loperand>
+<roperand>
+<literalinteger value="0" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<statementsequence count="3">
+<smt>
+<vardecl value="h">
+<input>
+<literalstring value="enter rainfall for August" />
+</input>
+</vardecl>
+</smt>
+<smt>
+<varassign value="list1">
+<call name="replace">
+<actualparams count="3">
+<actualparam>
+<varref value="z" />
+</actualparam>
+<actualparam>
+<varref value="h" />
+</actualparam>
+<actualparam>
+<varref value="list1" />
+</actualparam>
+</actualparams>
+</call>
+</varassign>
+</smt>
+<smt>
+<call name="menu">
+<actualparams count="2">
+<actualparam>
+<varref value="list1" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</smt>
+</statementsequence>
+</tbranch>
+<fbranch>
+<statementsequence count="2">
+<smt>
+<print>
+<literalstring value="Sorry, there's already snowfall in this month. If you want to change to rainfall, go back and change snowfall to '0'." />
+</print>
+</smt>
+<smt>
+<call name="menu">
+<actualparams count="2">
+<actualparam>
+<varref value="list1" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</smt>
+</statementsequence>
+</fbranch>
+</if>
+</tbranch>
+<fbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="z" />
+</loperand>
+<roperand>
+<literalinteger value="9" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<call name="find">
+<actualparams count="2">
+<actualparam>
+<varref value="z" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</loperand>
+<roperand>
+<literalinteger value="0" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<statementsequence count="3">
+<smt>
+<vardecl value="i">
+<input>
+<literalstring value="enter rainfall for September" />
+</input>
+</vardecl>
+</smt>
+<smt>
+<varassign value="list1">
+<call name="replace">
+<actualparams count="3">
+<actualparam>
+<varref value="z" />
+</actualparam>
+<actualparam>
+<varref value="i" />
+</actualparam>
+<actualparam>
+<varref value="list1" />
+</actualparam>
+</actualparams>
+</call>
+</varassign>
+</smt>
+<smt>
+<call name="menu">
+<actualparams count="2">
+<actualparam>
+<varref value="list1" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</smt>
+</statementsequence>
+</tbranch>
+<fbranch>
+<statementsequence count="2">
+<smt>
+<print>
+<literalstring value="Sorry, there's already snowfall in this month. If you want to change to rainfall, go back and change snowfall to '0'." />
+</print>
+</smt>
+<smt>
+<call name="menu">
+<actualparams count="2">
+<actualparam>
+<varref value="list1" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</smt>
+</statementsequence>
+</fbranch>
+</if>
+</tbranch>
+<fbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="z" />
+</loperand>
+<roperand>
+<literalinteger value="10" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<call name="find">
+<actualparams count="2">
+<actualparam>
+<varref value="z" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</loperand>
+<roperand>
+<literalinteger value="0" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<statementsequence count="3">
+<smt>
+<vardecl value="j">
+<input>
+<literalstring value="enter rainfall for October" />
+</input>
+</vardecl>
+</smt>
+<smt>
+<varassign value="list1">
+<call name="replace">
+<actualparams count="3">
+<actualparam>
+<varref value="z" />
+</actualparam>
+<actualparam>
+<varref value="j" />
+</actualparam>
+<actualparam>
+<varref value="list1" />
+</actualparam>
+</actualparams>
+</call>
+</varassign>
+</smt>
+<smt>
+<call name="menu">
+<actualparams count="2">
+<actualparam>
+<varref value="list1" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</smt>
+</statementsequence>
+</tbranch>
+<fbranch>
+<statementsequence count="2">
+<smt>
+<print>
+<literalstring value="Sorry, there's already snowfall in this month. If you want to change to rainfall, go back and change snowfall to '0'." />
+</print>
+</smt>
+<smt>
+<call name="menu">
+<actualparams count="2">
+<actualparam>
+<varref value="list1" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</smt>
+</statementsequence>
+</fbranch>
+</if>
+</tbranch>
+<fbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="z" />
+</loperand>
+<roperand>
+<literalinteger value="11" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<call name="find">
+<actualparams count="2">
+<actualparam>
+<varref value="z" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</loperand>
+<roperand>
+<literalinteger value="0" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<statementsequence count="3">
+<smt>
+<vardecl value="k">
+<input>
+<literalstring value="enter rainfall for November" />
+</input>
+</vardecl>
+</smt>
+<smt>
+<varassign value="list1">
+<call name="replace">
+<actualparams count="3">
+<actualparam>
+<varref value="z" />
+</actualparam>
+<actualparam>
+<varref value="k" />
+</actualparam>
+<actualparam>
+<varref value="list1" />
+</actualparam>
+</actualparams>
+</call>
+</varassign>
+</smt>
+<smt>
+<call name="menu">
+<actualparams count="2">
+<actualparam>
+<varref value="list1" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</smt>
+</statementsequence>
+</tbranch>
+<fbranch>
+<statementsequence count="2">
+<smt>
+<print>
+<literalstring value="Sorry, there's already snowfall in this month. If you want to change to rainfall, go back and change snowfall to '0'." />
+</print>
+</smt>
+<smt>
+<call name="menu">
+<actualparams count="2">
+<actualparam>
+<varref value="list1" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</smt>
+</statementsequence>
+</fbranch>
+</if>
+</tbranch>
+<fbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="z" />
+</loperand>
+<roperand>
+<literalinteger value="12" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<call name="find">
+<actualparams count="2">
+<actualparam>
+<varref value="z" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</loperand>
+<roperand>
+<literalinteger value="0" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<statementsequence count="3">
+<smt>
+<vardecl value="l">
+<input>
+<literalstring value="enter rainfall for December" />
+</input>
+</vardecl>
+</smt>
+<smt>
+<varassign value="list1">
+<call name="replace">
+<actualparams count="3">
+<actualparam>
+<varref value="z" />
+</actualparam>
+<actualparam>
+<varref value="l" />
+</actualparam>
+<actualparam>
+<varref value="list1" />
+</actualparam>
+</actualparams>
+</call>
+</varassign>
+</smt>
+<smt>
+<call name="menu">
+<actualparams count="2">
+<actualparam>
+<varref value="list1" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</smt>
+</statementsequence>
+</tbranch>
+<fbranch>
+<statementsequence count="2">
+<smt>
+<print>
+<literalstring value="Sorry, there's already snowfall in this month. If you want to change to rainfall, go back and change snowfall to '0'." />
+</print>
+</smt>
+<smt>
+<call name="menu">
+<actualparams count="2">
+<actualparam>
+<varref value="list1" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</smt>
+</statementsequence>
+</fbranch>
+</if>
+</tbranch>
+<fbranch>
+<call name="menu">
+<actualparams count="2">
+<actualparam>
+<varref value="list1" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</fbranch>
+</if>
+</fbranch>
+</if>
+</fbranch>
+</if>
+</fbranch>
+</if>
+</fbranch>
+</if>
+</fbranch>
+</if>
+</fbranch>
+</if>
+</fbranch>
+</if>
+</fbranch>
+</if>
+</fbranch>
+</if>
+</fbranch>
+</if>
+</fbranch>
+</if>
+</smt>
+</statementsequence>
+</tbranch>
+<fbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="x" />
+</loperand>
+<roperand>
+<literalinteger value="2" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<statementsequence count="2">
+<smt>
+<vardecl value="y">
+<input>
+<literalstring value="please enter month number" />
+</input>
+</vardecl>
+</smt>
+<smt>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="y" />
+</loperand>
+<roperand>
+<literalinteger value="1" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<call name="find">
+<actualparams count="2">
+<actualparam>
+<varref value="y" />
+</actualparam>
+<actualparam>
+<varref value="list1" />
+</actualparam>
+</actualparams>
+</call>
+</loperand>
+<roperand>
+<literalinteger value="0" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<statementsequence count="3">
+<smt>
+<vardecl value="m">
+<input>
+<literalstring value="enter snowfall for January" />
+</input>
+</vardecl>
+</smt>
+<smt>
+<varassign value="list2">
+<call name="replace">
+<actualparams count="3">
+<actualparam>
+<varref value="y" />
+</actualparam>
+<actualparam>
+<varref value="m" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</varassign>
+</smt>
+<smt>
+<call name="menu">
+<actualparams count="2">
+<actualparam>
+<varref value="list1" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</smt>
+</statementsequence>
+</tbranch>
+<fbranch>
+<statementsequence count="2">
+<smt>
+<print>
+<literalstring value="Sorry, there's already rainfall in this month. If you want to change to snowfall, go back and change rainfall to '0'." />
+</print>
+</smt>
+<smt>
+<call name="menu">
+<actualparams count="2">
+<actualparam>
+<varref value="list1" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</smt>
+</statementsequence>
+</fbranch>
+</if>
+</tbranch>
+<fbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="y" />
+</loperand>
+<roperand>
+<literalinteger value="2" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<call name="find">
+<actualparams count="2">
+<actualparam>
+<varref value="y" />
+</actualparam>
+<actualparam>
+<varref value="list1" />
+</actualparam>
+</actualparams>
+</call>
+</loperand>
+<roperand>
+<literalinteger value="0" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<statementsequence count="3">
+<smt>
+<vardecl value="n">
+<input>
+<literalstring value="enter snowfall for February" />
+</input>
+</vardecl>
+</smt>
+<smt>
+<varassign value="list2">
+<call name="replace">
+<actualparams count="3">
+<actualparam>
+<varref value="y" />
+</actualparam>
+<actualparam>
+<varref value="n" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</varassign>
+</smt>
+<smt>
+<call name="menu">
+<actualparams count="2">
+<actualparam>
+<varref value="list1" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</smt>
+</statementsequence>
+</tbranch>
+<fbranch>
+<statementsequence count="2">
+<smt>
+<print>
+<literalstring value="Sorry, there's already rainfall in this month. If you want to change to snowfall, go back and change rainfall to '0'." />
+</print>
+</smt>
+<smt>
+<call name="menu">
+<actualparams count="2">
+<actualparam>
+<varref value="list1" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</smt>
+</statementsequence>
+</fbranch>
+</if>
+</tbranch>
+<fbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="y" />
+</loperand>
+<roperand>
+<literalinteger value="3" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<call name="find">
+<actualparams count="2">
+<actualparam>
+<varref value="y" />
+</actualparam>
+<actualparam>
+<varref value="list1" />
+</actualparam>
+</actualparams>
+</call>
+</loperand>
+<roperand>
+<literalinteger value="0" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<statementsequence count="3">
+<smt>
+<vardecl value="o">
+<input>
+<literalstring value="enter snowfall for March" />
+</input>
+</vardecl>
+</smt>
+<smt>
+<varassign value="list2">
+<call name="replace">
+<actualparams count="3">
+<actualparam>
+<varref value="y" />
+</actualparam>
+<actualparam>
+<varref value="o" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</varassign>
+</smt>
+<smt>
+<call name="menu">
+<actualparams count="2">
+<actualparam>
+<varref value="list1" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</smt>
+</statementsequence>
+</tbranch>
+<fbranch>
+<statementsequence count="2">
+<smt>
+<print>
+<literalstring value="Sorry, there's already rainfall in this month. If you want to change to snowfall, go back and change rainfall to '0'." />
+</print>
+</smt>
+<smt>
+<call name="menu">
+<actualparams count="2">
+<actualparam>
+<varref value="list1" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</smt>
+</statementsequence>
+</fbranch>
+</if>
+</tbranch>
+<fbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="y" />
+</loperand>
+<roperand>
+<literalinteger value="4" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<call name="find">
+<actualparams count="2">
+<actualparam>
+<varref value="y" />
+</actualparam>
+<actualparam>
+<varref value="list1" />
+</actualparam>
+</actualparams>
+</call>
+</loperand>
+<roperand>
+<literalinteger value="0" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<statementsequence count="3">
+<smt>
+<vardecl value="p">
+<input>
+<literalstring value="enter snowfall for April" />
+</input>
+</vardecl>
+</smt>
+<smt>
+<varassign value="list2">
+<call name="replace">
+<actualparams count="3">
+<actualparam>
+<varref value="y" />
+</actualparam>
+<actualparam>
+<varref value="p" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</varassign>
+</smt>
+<smt>
+<call name="menu">
+<actualparams count="2">
+<actualparam>
+<varref value="list1" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</smt>
+</statementsequence>
+</tbranch>
+<fbranch>
+<statementsequence count="2">
+<smt>
+<print>
+<literalstring value="Sorry, there's already rainfall in this month. If you want to change to snowfall, go back and change rainfall to '0'." />
+</print>
+</smt>
+<smt>
+<call name="menu">
+<actualparams count="2">
+<actualparam>
+<varref value="list1" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</smt>
+</statementsequence>
+</fbranch>
+</if>
+</tbranch>
+<fbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="y" />
+</loperand>
+<roperand>
+<literalinteger value="5" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<call name="find">
+<actualparams count="2">
+<actualparam>
+<varref value="y" />
+</actualparam>
+<actualparam>
+<varref value="list1" />
+</actualparam>
+</actualparams>
+</call>
+</loperand>
+<roperand>
+<literalinteger value="0" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<statementsequence count="3">
+<smt>
+<vardecl value="q">
+<input>
+<literalstring value="enter snowfall for May" />
+</input>
+</vardecl>
+</smt>
+<smt>
+<varassign value="list2">
+<call name="replace">
+<actualparams count="3">
+<actualparam>
+<varref value="y" />
+</actualparam>
+<actualparam>
+<varref value="q" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</varassign>
+</smt>
+<smt>
+<call name="menu">
+<actualparams count="2">
+<actualparam>
+<varref value="list1" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</smt>
+</statementsequence>
+</tbranch>
+<fbranch>
+<statementsequence count="2">
+<smt>
+<print>
+<literalstring value="Sorry, there's already rainfall in this month. If you want to change to snowfall, go back and change rainfall to '0'." />
+</print>
+</smt>
+<smt>
+<call name="menu">
+<actualparams count="2">
+<actualparam>
+<varref value="list1" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</smt>
+</statementsequence>
+</fbranch>
+</if>
+</tbranch>
+<fbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="y" />
+</loperand>
+<roperand>
+<literalinteger value="6" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<call name="find">
+<actualparams count="2">
+<actualparam>
+<varref value="y" />
+</actualparam>
+<actualparam>
+<varref value="list1" />
+</actualparam>
+</actualparams>
+</call>
+</loperand>
+<roperand>
+<literalinteger value="0" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<statementsequence count="3">
+<smt>
+<vardecl value="r">
+<input>
+<literalstring value="enter snowfall for June" />
+</input>
+</vardecl>
+</smt>
+<smt>
+<varassign value="list2">
+<call name="replace">
+<actualparams count="3">
+<actualparam>
+<varref value="y" />
+</actualparam>
+<actualparam>
+<varref value="r" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</varassign>
+</smt>
+<smt>
+<call name="menu">
+<actualparams count="2">
+<actualparam>
+<varref value="list1" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</smt>
+</statementsequence>
+</tbranch>
+<fbranch>
+<statementsequence count="2">
+<smt>
+<print>
+<literalstring value="Sorry, there's already rainfall in this month. If you want to change to snowfall, go back and change rainfall to '0'." />
+</print>
+</smt>
+<smt>
+<call name="menu">
+<actualparams count="2">
+<actualparam>
+<varref value="list1" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</smt>
+</statementsequence>
+</fbranch>
+</if>
+</tbranch>
+<fbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="y" />
+</loperand>
+<roperand>
+<literalinteger value="7" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<call name="find">
+<actualparams count="2">
+<actualparam>
+<varref value="y" />
+</actualparam>
+<actualparam>
+<varref value="list1" />
+</actualparam>
+</actualparams>
+</call>
+</loperand>
+<roperand>
+<literalinteger value="0" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<statementsequence count="3">
+<smt>
+<vardecl value="s">
+<input>
+<literalstring value="enter snowfall for July" />
+</input>
+</vardecl>
+</smt>
+<smt>
+<varassign value="list2">
+<call name="replace">
+<actualparams count="3">
+<actualparam>
+<varref value="y" />
+</actualparam>
+<actualparam>
+<varref value="s" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</varassign>
+</smt>
+<smt>
+<call name="menu">
+<actualparams count="2">
+<actualparam>
+<varref value="list1" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</smt>
+</statementsequence>
+</tbranch>
+<fbranch>
+<statementsequence count="2">
+<smt>
+<print>
+<literalstring value="Sorry, there's already rainfall in this month. If you want to change to snowfall, go back and change rainfall to '0'." />
+</print>
+</smt>
+<smt>
+<call name="menu">
+<actualparams count="2">
+<actualparam>
+<varref value="list1" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</smt>
+</statementsequence>
+</fbranch>
+</if>
+</tbranch>
+<fbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="y" />
+</loperand>
+<roperand>
+<literalinteger value="8" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<call name="find">
+<actualparams count="2">
+<actualparam>
+<varref value="y" />
+</actualparam>
+<actualparam>
+<varref value="list1" />
+</actualparam>
+</actualparams>
+</call>
+</loperand>
+<roperand>
+<literalinteger value="0" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<statementsequence count="3">
+<smt>
+<vardecl value="t">
+<input>
+<literalstring value="enter snowfall for August" />
+</input>
+</vardecl>
+</smt>
+<smt>
+<varassign value="list2">
+<call name="replace">
+<actualparams count="3">
+<actualparam>
+<varref value="y" />
+</actualparam>
+<actualparam>
+<varref value="t" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</varassign>
+</smt>
+<smt>
+<call name="menu">
+<actualparams count="2">
+<actualparam>
+<varref value="list1" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</smt>
+</statementsequence>
+</tbranch>
+<fbranch>
+<statementsequence count="2">
+<smt>
+<print>
+<literalstring value="Sorry, there's already rainfall in this month. If you want to change to snowfall, go back and change rainfall to '0'." />
+</print>
+</smt>
+<smt>
+<call name="menu">
+<actualparams count="2">
+<actualparam>
+<varref value="list1" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</smt>
+</statementsequence>
+</fbranch>
+</if>
+</tbranch>
+<fbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="y" />
+</loperand>
+<roperand>
+<literalinteger value="9" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<call name="find">
+<actualparams count="2">
+<actualparam>
+<varref value="y" />
+</actualparam>
+<actualparam>
+<varref value="list1" />
+</actualparam>
+</actualparams>
+</call>
+</loperand>
+<roperand>
+<literalinteger value="0" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<statementsequence count="3">
+<smt>
+<vardecl value="u">
+<input>
+<literalstring value="enter snowfall for September" />
+</input>
+</vardecl>
+</smt>
+<smt>
+<varassign value="list2">
+<call name="replace">
+<actualparams count="3">
+<actualparam>
+<varref value="y" />
+</actualparam>
+<actualparam>
+<varref value="u" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</varassign>
+</smt>
+<smt>
+<call name="menu">
+<actualparams count="2">
+<actualparam>
+<varref value="list1" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</smt>
+</statementsequence>
+</tbranch>
+<fbranch>
+<statementsequence count="2">
+<smt>
+<print>
+<literalstring value="Sorry, there's already rainfall in this month. If you want to change to snowfall, go back and change rainfall to '0'." />
+</print>
+</smt>
+<smt>
+<call name="menu">
+<actualparams count="2">
+<actualparam>
+<varref value="list1" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</smt>
+</statementsequence>
+</fbranch>
+</if>
+</tbranch>
+<fbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="y" />
+</loperand>
+<roperand>
+<literalinteger value="10" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<call name="find">
+<actualparams count="2">
+<actualparam>
+<varref value="y" />
+</actualparam>
+<actualparam>
+<varref value="list1" />
+</actualparam>
+</actualparams>
+</call>
+</loperand>
+<roperand>
+<literalinteger value="0" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<statementsequence count="3">
+<smt>
+<vardecl value="v">
+<input>
+<literalstring value="enter snowfall for October" />
+</input>
+</vardecl>
+</smt>
+<smt>
+<varassign value="list2">
+<call name="replace">
+<actualparams count="3">
+<actualparam>
+<varref value="y" />
+</actualparam>
+<actualparam>
+<varref value="v" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</varassign>
+</smt>
+<smt>
+<call name="menu">
+<actualparams count="2">
+<actualparam>
+<varref value="list1" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</smt>
+</statementsequence>
+</tbranch>
+<fbranch>
+<statementsequence count="2">
+<smt>
+<print>
+<literalstring value="Sorry, there's already rainfall in this month. If you want to change to snowfall, go back and change rainfall to '0'." />
+</print>
+</smt>
+<smt>
+<call name="menu">
+<actualparams count="2">
+<actualparam>
+<varref value="list1" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</smt>
+</statementsequence>
+</fbranch>
+</if>
+</tbranch>
+<fbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="y" />
+</loperand>
+<roperand>
+<literalinteger value="11" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<call name="find">
+<actualparams count="2">
+<actualparam>
+<varref value="y" />
+</actualparam>
+<actualparam>
+<varref value="list1" />
+</actualparam>
+</actualparams>
+</call>
+</loperand>
+<roperand>
+<literalinteger value="0" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<statementsequence count="3">
+<smt>
+<vardecl value="w">
+<input>
+<literalstring value="enter snowfall for November" />
+</input>
+</vardecl>
+</smt>
+<smt>
+<varassign value="list2">
+<call name="replace">
+<actualparams count="3">
+<actualparam>
+<varref value="y" />
+</actualparam>
+<actualparam>
+<varref value="w" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</varassign>
+</smt>
+<smt>
+<call name="menu">
+<actualparams count="2">
+<actualparam>
+<varref value="list1" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</smt>
+</statementsequence>
+</tbranch>
+<fbranch>
+<statementsequence count="2">
+<smt>
+<print>
+<literalstring value="Sorry, there's already rainfall in this month. If you want to change to snowfall, go back and change rainfall to '0'." />
+</print>
+</smt>
+<smt>
+<call name="menu">
+<actualparams count="2">
+<actualparam>
+<varref value="list1" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</smt>
+</statementsequence>
+</fbranch>
+</if>
+</tbranch>
+<fbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="y" />
+</loperand>
+<roperand>
+<literalinteger value="12" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<call name="find">
+<actualparams count="2">
+<actualparam>
+<varref value="y" />
+</actualparam>
+<actualparam>
+<varref value="list1" />
+</actualparam>
+</actualparams>
+</call>
+</loperand>
+<roperand>
+<literalinteger value="0" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<statementsequence count="3">
+<smt>
+<vardecl value="x'">
+<input>
+<literalstring value="enter snowfall for December" />
+</input>
+</vardecl>
+</smt>
+<smt>
+<varassign value="list2">
+<call name="replace">
+<actualparams count="3">
+<actualparam>
+<varref value="y" />
+</actualparam>
+<actualparam>
+<varref value="x'" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</varassign>
+</smt>
+<smt>
+<call name="menu">
+<actualparams count="2">
+<actualparam>
+<varref value="list1" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</smt>
+</statementsequence>
+</tbranch>
+<fbranch>
+<statementsequence count="2">
+<smt>
+<print>
+<literalstring value="Sorry, there's already rainfall in this month. If you want to change to snowfall, go back and change rainfall to '0'." />
+</print>
+</smt>
+<smt>
+<call name="menu">
+<actualparams count="2">
+<actualparam>
+<varref value="list1" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</smt>
+</statementsequence>
+</fbranch>
+</if>
+</tbranch>
+<fbranch>
+<call name="menu">
+<actualparams count="2">
+<actualparam>
+<varref value="list1" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</fbranch>
+</if>
+</fbranch>
+</if>
+</fbranch>
+</if>
+</fbranch>
+</if>
+</fbranch>
+</if>
+</fbranch>
+</if>
+</fbranch>
+</if>
+</fbranch>
+</if>
+</fbranch>
+</if>
+</fbranch>
+</if>
+</fbranch>
+</if>
+</fbranch>
+</if>
+</smt>
+</statementsequence>
+</tbranch>
+<fbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="x" />
+</loperand>
+<roperand>
+<literalinteger value="3" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<statementsequence count="5">
+<smt>
+<print>
+<combinestring>
+<loperand>
+<combinestring>
+<loperand>
+<literalstring value="total precipitation was " />
+</loperand>
+<roperand>
+<addition>
+<loperand>
+<call name="sumlist">
+<actualparams count="1">
+<actualparam>
+<varref value="list1" />
+</actualparam>
+</actualparams>
+</call>
+</loperand>
+<roperand>
+<call name="sumlist">
+<actualparams count="1">
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</roperand>
+</addition>
+</roperand>
+</combinestring>
+</loperand>
+<roperand>
+<literalstring value=" mm." />
+</roperand>
+</combinestring>
+</print>
+</smt>
+<smt>
+<print>
+<combinestring>
+<loperand>
+<literalstring value="average rainfall was " />
+</loperand>
+<roperand>
+<combinestring>
+<loperand>
+<call name="average">
+<actualparams count="1">
+<actualparam>
+<varref value="list1" />
+</actualparam>
+</actualparams>
+</call>
+</loperand>
+<roperand>
+<literalstring value=" mm." />
+</roperand>
+</combinestring>
+</roperand>
+</combinestring>
+</print>
+</smt>
+<smt>
+<if>
+<condition>
+<equals>
+<loperand>
+<call name="sumlist">
+<actualparams count="1">
+<actualparam>
+<varref value="list1" />
+</actualparam>
+</actualparams>
+</call>
+</loperand>
+<roperand>
+<literalinteger value="0" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<print>
+<literalstring value="no rainfall this year" />
+</print>
+</tbranch>
+<fbranch>
+<print>
+<combinestring>
+<loperand>
+<literalstring value="maximum rainfall was " />
+</loperand>
+<roperand>
+<combinestring>
+<loperand>
+<call name="maxlist">
+<actualparams count="1">
+<actualparam>
+<varref value="list1" />
+</actualparam>
+</actualparams>
+</call>
+</loperand>
+<roperand>
+<combinestring>
+<loperand>
+<literalstring value="  mm." />
+</loperand>
+<roperand>
+<combinestring>
+<loperand>
+<literalstring value="  in " />
+</loperand>
+<roperand>
+<call name="when">
+<actualparams count="2">
+<actualparam>
+<call name="maxlist">
+<actualparams count="1">
+<actualparam>
+<varref value="list1" />
+</actualparam>
+</actualparams>
+</call>
+</actualparam>
+<actualparam>
+<varref value="list1" />
+</actualparam>
+</actualparams>
+</call>
+</roperand>
+</combinestring>
+</roperand>
+</combinestring>
+</roperand>
+</combinestring>
+</roperand>
+</combinestring>
+</print>
+</fbranch>
+</if>
+</smt>
+<smt>
+<if>
+<condition>
+<equals>
+<loperand>
+<call name="sumlist">
+<actualparams count="1">
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</loperand>
+<roperand>
+<literalinteger value="0" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<print>
+<literalstring value="no snowfall this year" />
+</print>
+</tbranch>
+<fbranch>
+<print>
+<combinestring>
+<loperand>
+<literalstring value="maximun snowfall was " />
+</loperand>
+<roperand>
+<combinestring>
+<loperand>
+<call name="maxlist">
+<actualparams count="1">
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</loperand>
+<roperand>
+<combinestring>
+<loperand>
+<literalstring value="  mm." />
+</loperand>
+<roperand>
+<combinestring>
+<loperand>
+<literalstring value="  in " />
+</loperand>
+<roperand>
+<call name="when">
+<actualparams count="2">
+<actualparam>
+<call name="maxlist">
+<actualparams count="1">
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</roperand>
+</combinestring>
+</roperand>
+</combinestring>
+</roperand>
+</combinestring>
+</roperand>
+</combinestring>
+</print>
+</fbranch>
+</if>
+</smt>
+<smt>
+<call name="menu">
+<actualparams count="2">
+<actualparam>
+<varref value="list1" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</smt>
+</statementsequence>
+</tbranch>
+<fbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="x" />
+</loperand>
+<roperand>
+<literalinteger value="4" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<return>
+<literalstring value="end" />
+</return>
+</tbranch>
+<fbranch>
+<call name="menu">
+<actualparams count="2">
+<actualparam>
+<varref value="list1" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</fbranch>
+</if>
+</fbranch>
+</if>
+</fbranch>
+</if>
+</fbranch>
+</if>
+</smt>
+</statementsequence>
+</body>
+</algorithm>
+<algorithm name="sumlist">
+<formalparams count="1">
+<param name="list5"/>
+</formalparams>
+<body>
+<if>
+<condition>
+<listisempty>
+<varref value="list5" />
+</listisempty>
+</condition>
+<tbranch>
+<return>
+<literalinteger value="0" />
+</return>
+</tbranch>
+<fbranch>
+<return>
+<addition>
+<loperand>
+<listvalue>
+<varref value="list5" />
+</listvalue>
+</loperand>
+<roperand>
+<call name="sumlist">
+<actualparams count="1">
+<actualparam>
+<listtail>
+<varref value="list5" />
+</listtail>
+</actualparam>
+</actualparams>
+</call>
+</roperand>
+</addition>
+</return>
+</fbranch>
+</if>
+</body>
+</algorithm>
+<algorithm name="length">
+<formalparams count="1">
+<param name="list4"/>
+</formalparams>
+<body>
+<if>
+<condition>
+<listisempty>
+<varref value="list4" />
+</listisempty>
+</condition>
+<tbranch>
+<return>
+<literalinteger value="0" />
+</return>
+</tbranch>
+<fbranch>
+<return>
+<addition>
+<loperand>
+<literalinteger value="1" />
+</loperand>
+<roperand>
+<call name="length">
+<actualparams count="1">
+<actualparam>
+<listtail>
+<varref value="list4" />
+</listtail>
+</actualparam>
+</actualparams>
+</call>
+</roperand>
+</addition>
+</return>
+</fbranch>
+</if>
+</body>
+</algorithm>
+<algorithm name="average">
+<formalparams count="1">
+<param name="list6"/>
+</formalparams>
+<body>
+<if>
+<condition>
+<listisempty>
+<varref value="list6" />
+</listisempty>
+</condition>
+<tbranch>
+<return>
+<literalinteger value="0" />
+</return>
+</tbranch>
+<fbranch>
+<statementsequence count="3">
+<smt>
+<vardecl value="x1">
+<call name="length">
+<actualparams count="1">
+<actualparam>
+<varref value="list6" />
+</actualparam>
+</actualparams>
+</call>
+</vardecl>
+</smt>
+<smt>
+<vardecl value="x2">
+<call name="sumlist">
+<actualparams count="1">
+<actualparam>
+<varref value="list6" />
+</actualparam>
+</actualparams>
+</call>
+</vardecl>
+</smt>
+<smt>
+<return>
+<division>
+<loperand>
+<varref value="x2" />
+</loperand>
+<roperand>
+<varref value="x1" />
+</roperand>
+</division>
+</return>
+</smt>
+</statementsequence>
+</fbranch>
+</if>
+</body>
+</algorithm>
+<algorithm name="max">
+<formalparams count="2">
+<param name="x"/>
+<param name="y"/>
+</formalparams>
+<body>
+<if>
+<condition>
+<greater>
+<loperand>
+<varref value="x" />
+</loperand>
+<roperand>
+<varref value="y" />
+</roperand>
+</greater>
+</condition>
+<tbranch>
+<return>
+<varref value="x" />
+</return>
+</tbranch>
+<fbranch>
+<return>
+<varref value="y" />
+</return>
+</fbranch>
+</if>
+</body>
+</algorithm>
+<algorithm name="maxlist">
+<formalparams count="1">
+<param name="list7"/>
+</formalparams>
+<body>
+<if>
+<condition>
+<listisempty>
+<varref value="list7" />
+</listisempty>
+</condition>
+<tbranch>
+<return>
+<literalinteger value="0" />
+</return>
+</tbranch>
+<fbranch>
+<return>
+<call name="max">
+<actualparams count="2">
+<actualparam>
+<listvalue>
+<varref value="list7" />
+</listvalue>
+</actualparam>
+<actualparam>
+<call name="maxlist">
+<actualparams count="1">
+<actualparam>
+<listtail>
+<varref value="list7" />
+</listtail>
+</actualparam>
+</actualparams>
+</call>
+</actualparam>
+</actualparams>
+</call>
+</return>
+</fbranch>
+</if>
+</body>
+</algorithm>
+<algorithm name="time">
+<formalparams count="1">
+<param name="a6"/>
+</formalparams>
+<body>
+<statementsequence count="1">
+<smt>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="a6" />
+</loperand>
+<roperand>
+<literalinteger value="12" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<return>
+<literalstring value="December" />
+</return>
+</tbranch>
+<fbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="a6" />
+</loperand>
+<roperand>
+<literalinteger value="11" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<return>
+<literalstring value="November" />
+</return>
+</tbranch>
+<fbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="a6" />
+</loperand>
+<roperand>
+<literalinteger value="10" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<return>
+<literalstring value="October" />
+</return>
+</tbranch>
+<fbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="a6" />
+</loperand>
+<roperand>
+<literalinteger value="9" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<return>
+<literalstring value="September" />
+</return>
+</tbranch>
+<fbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="a6" />
+</loperand>
+<roperand>
+<literalinteger value="8" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<return>
+<literalstring value="August" />
+</return>
+</tbranch>
+<fbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="a6" />
+</loperand>
+<roperand>
+<literalinteger value="7" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<return>
+<literalstring value="July" />
+</return>
+</tbranch>
+<fbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="a6" />
+</loperand>
+<roperand>
+<literalinteger value="6" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<return>
+<literalstring value="June" />
+</return>
+</tbranch>
+<fbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="a6" />
+</loperand>
+<roperand>
+<literalinteger value="5" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<return>
+<literalstring value="May" />
+</return>
+</tbranch>
+<fbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="a6" />
+</loperand>
+<roperand>
+<literalinteger value="4" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<return>
+<literalstring value="April" />
+</return>
+</tbranch>
+<fbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="a6" />
+</loperand>
+<roperand>
+<literalinteger value="3" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<return>
+<literalstring value="March" />
+</return>
+</tbranch>
+<fbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="a6" />
+</loperand>
+<roperand>
+<literalinteger value="2" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<return>
+<literalstring value="February" />
+</return>
+</tbranch>
+<fbranch>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="a6" />
+</loperand>
+<roperand>
+<literalinteger value="1" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<return>
+<literalstring value="January" />
+</return>
+</tbranch>
+<fbranch>
+<call name="menu">
+<actualparams count="2">
+<actualparam>
+<varref value="list1" />
+</actualparam>
+<actualparam>
+<varref value="list2" />
+</actualparam>
+</actualparams>
+</call>
+</fbranch>
+</if>
+</fbranch>
+</if>
+</fbranch>
+</if>
+</fbranch>
+</if>
+</fbranch>
+</if>
+</fbranch>
+</if>
+</fbranch>
+</if>
+</fbranch>
+</if>
+</fbranch>
+</if>
+</fbranch>
+</if>
+</fbranch>
+</if>
+</fbranch>
+</if>
+</smt>
+</statementsequence>
+</body>
+</algorithm>
+<algorithm name="when">
+<formalparams count="2">
+<param name="a5"/>
+<param name="list5"/>
+</formalparams>
+<body>
+<statementsequence count="3">
+<smt>
+<vardecl value="a7">
+<literalinteger value="1" />
+</vardecl>
+</smt>
+<smt>
+<while>
+<condition>
+<call name="not">
+<actualparams count="1">
+<actualparam>
+<equals>
+<loperand>
+<listvalue>
+<varref value="list5" />
+</listvalue>
+</loperand>
+<roperand>
+<varref value="a5" />
+</roperand>
+</equals>
+</actualparam>
+</actualparams>
+</call>
+</condition>
+<body>
+<statementsequence count="3">
+<smt>
+<varassign value="list5">
+<listtail>
+<varref value="list5" />
+</listtail>
+</varassign>
+</smt>
+<smt>
+<varassign value="a5">
+<varref value="a5" />
+</varassign>
+</smt>
+<smt>
+<varassign value="a7">
+<addition>
+<loperand>
+<varref value="a7" />
+</loperand>
+<roperand>
+<literalinteger value="1" />
+</roperand>
+</addition>
+</varassign>
+</smt>
+</statementsequence>
+</body>
+</while>
+</smt>
+<smt>
+<return>
+<call name="time">
+<actualparams count="1">
+<actualparam>
+<varref value="a7" />
+</actualparam>
+</actualparams>
+</call>
+</return>
+</smt>
+</statementsequence>
+</body>
+</algorithm>
+<algorithm name="not">
+<formalparams count="1">
+<param name="a"/>
+</formalparams>
+<body>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="a" />
+</loperand>
+<roperand>
+<literalboolean value="true" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<return>
+<literalboolean value="false" />
+</return>
+</tbranch>
+<fbranch>
+<return>
+<literalboolean value="true" />
+</return>
+</fbranch>
+</if>
+</body>
+</algorithm>
+</workspace>

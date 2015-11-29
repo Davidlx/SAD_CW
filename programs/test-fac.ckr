@@ -1,0 +1,58 @@
+<workspace checksum="04078a4b-f338-4683-bbf9-8cc4a0cb611b">
+  <algorithm name="factorial">
+    <formalparams count="1">
+      <param name="x"  />
+    </formalparams>
+    <body>
+      <if>
+	<condition>
+	  <equals>
+	    <loperand>
+	      <varref value="x" />
+	    </loperand>
+	    <roperand>
+	      <literalinteger value="1" />
+	    </roperand>
+	  </equals>
+	</condition>
+	<tbranch>
+	  <return>
+	    <literalinteger value="1" />
+	  </return>
+	</tbranch>
+	<fbranch>
+	  <return>
+	    <multiplication>
+	      <loperand>
+		<varref value="x" />
+	      </loperand>
+	      <roperand>
+		<call name="factorial">
+		  <actualparams count="1">
+		    <actualparam>
+		      <addition>
+			<loperand>
+			  <varref value="x" />
+			</loperand>
+			<roperand>
+			  <literalinteger value="-1" />
+			</roperand>
+		      </addition>
+		    </actualparam>
+		  </actualparams>
+		</call>
+	      </roperand>
+	    </multiplication>
+	  </return>
+	</fbranch>
+      </if>
+    </body>
+  </algorithm>
+  <call name="factorial">
+    <actualparams count="1">
+      <actualparam>
+	<literalinteger value="5" />
+      </actualparam>
+    </actualparams>
+  </call>
+</workspace>

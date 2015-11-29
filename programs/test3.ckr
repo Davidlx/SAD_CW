@@ -1,0 +1,12 @@
+<workspace checksum="a922997a-3fbd-44bc-afec-88d2b83367dd">
+<algorithm name="prt">
+<formalparams count="1">
+<param name="x"/>
+</formalparams>
+<body>
+<print>
+<varref value="x" />
+</print>
+</body>
+</algorithm>
+</workspace>

@@ -1,0 +1,15 @@
+<workspace checksum="48b9ede1-830a-42d6-a10a-78d014db62fc">
+<algorithm name="f" xpos="277" ypos="84" >
+<formalparams count="0">
+</formalparams>
+<body>
+<return>
+<literalstring value="a&quot;b" />
+</return>
+</body>
+</algorithm>
+<call name="f" xpos="50" ypos="50" >
+<actualparams count="0">
+</actualparams>
+</call>
+</workspace>

@@ -1,0 +1,13 @@
+<workspace checksum="4aadf12e-8c9a-4e32-b201-96901bb0d9e8">
+<algorithm name="blah">
+<formalparams count="3">
+<param name="x"/>
+<param name="y"/>
+<param name="z"/>
+</formalparams>
+<body>
+<return>
+</return>
+</body>
+</algorithm>
+</workspace>

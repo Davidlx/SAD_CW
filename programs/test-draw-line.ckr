@@ -1,0 +1,74 @@
+<workspace checksum="e7dbcb4d-d2e0-43c4-96f2-aa0773fe4c42">
+<algorithm name="main">
+<formalparams count="0">
+</formalparams>
+<body>
+<statementsequence count="3">
+<smt>
+<vardecl value="g">
+<graphicscontext>
+<width>
+<literalinteger value="300" />
+</width>
+<height>
+<literalinteger value="300" />
+</height>
+</graphicscontext>
+</vardecl>
+</smt>
+<smt>
+<vardecl value="i">
+<literalinteger value="100" />
+</vardecl>
+</smt>
+<smt>
+<while>
+<condition>
+<lesser>
+<loperand>
+<varref value="i" />
+</loperand>
+<roperand>
+<literalinteger value="200" />
+</roperand>
+</lesser>
+</condition>
+<body>
+<statementsequence count="2">
+<smt>
+<drawpixel>
+<context>
+<varref value="g" />
+</context>
+<xcoord>
+<varref value="i" />
+</xcoord>
+<ycoord>
+<varref value="i" />
+</ycoord>
+</drawpixel>
+</smt>
+<smt>
+<varassign value="i">
+<addition>
+<loperand>
+<varref value="i" />
+</loperand>
+<roperand>
+<literalinteger value="1" />
+</roperand>
+</addition>
+</varassign>
+</smt>
+</statementsequence>
+</body>
+</while>
+</smt>
+</statementsequence>
+</body>
+</algorithm>
+<call name="main">
+<actualparams count="0">
+</actualparams>
+</call>
+</workspace>

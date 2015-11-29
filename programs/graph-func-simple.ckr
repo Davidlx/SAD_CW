@@ -1,0 +1,118 @@
+<workspace checksum="e857694e-3aa3-4554-bb3b-c76552393134">
+<algorithm name="f1">
+<formalparams count="1">
+<param name="x"/>
+</formalparams>
+<body>
+<return>
+<multiplication>
+<loperand>
+<varref value="x" />
+</loperand>
+<roperand>
+<varref value="x" />
+</roperand>
+</multiplication>
+</return>
+</body>
+</algorithm>
+<algorithm name="plot">
+<formalparams count="1">
+<param name="width"/>
+</formalparams>
+<body>
+<statementsequence count="3">
+<smt>
+<vardecl value="g">
+<graphicscontext>
+<width>
+<varref value="width" />
+</width>
+<height>
+<literalinteger value="600" />
+</height>
+</graphicscontext>
+</vardecl>
+</smt>
+<smt>
+<vardecl value="i">
+<literalinteger value="0" />
+</vardecl>
+</smt>
+<smt>
+<while>
+<condition>
+<lesser>
+<loperand>
+<varref value="i" />
+</loperand>
+<roperand>
+<varref value="width" />
+</roperand>
+</lesser>
+</condition>
+<body>
+<statementsequence count="2">
+<smt>
+<drawpixel>
+<context>
+<varref value="g" />
+</context>
+<xcoord>
+<varref value="i" />
+</xcoord>
+<ycoord>
+<call name="f">
+<actualparams count="1">
+<actualparam>
+<varref value="i" />
+</actualparam>
+</actualparams>
+</call>
+</ycoord>
+</drawpixel>
+</smt>
+<smt>
+<varassign value="i">
+<addition>
+<loperand>
+<varref value="i" />
+</loperand>
+<roperand>
+<literalinteger value="1" />
+</roperand>
+</addition>
+</varassign>
+</smt>
+</statementsequence>
+</body>
+</while>
+</smt>
+</statementsequence>
+</body>
+</algorithm>
+<call name="plot">
+<actualparams count="1">
+<actualparam>
+<literalinteger value="1000" />
+</actualparam>
+</actualparams>
+</call>
+<algorithm name="f">
+<formalparams count="1">
+<param name="x"/>
+</formalparams>
+<body>
+<return>
+<multiplication>
+<loperand>
+<varref value="x" />
+</loperand>
+<roperand>
+<literalinteger value="2" />
+</roperand>
+</multiplication>
+</return>
+</body>
+</algorithm>
+</workspace>

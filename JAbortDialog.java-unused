@@ -1,0 +1,7 @@
+package org.scotek.vpl;
+
+import java.awt.*;
+import javax.swing.*;
+
+class JAbortDialog extends JDialog
+{

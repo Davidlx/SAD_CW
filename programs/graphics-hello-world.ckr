@@ -1,0 +1,42 @@
+<workspace checksum="59f5b638-d713-40df-b9c1-08c0a656b92c">
+<algorithm name="f">
+<formalparams count="0">
+</formalparams>
+<body>
+<statementsequence count="2">
+<smt>
+<vardecl value="g">
+<graphicscontext>
+<width>
+<literalinteger value="600" />
+</width>
+<height>
+<literalinteger value="600" />
+</height>
+</graphicscontext>
+</vardecl>
+</smt>
+<smt>
+<drawstring>
+<context>
+<varref value="g" />
+</context>
+<xcoord>
+<literalinteger value="100" />
+</xcoord>
+<ycoord>
+<literalinteger value="100" />
+</ycoord>
+<str>
+<literalstring value="Hello World!" />
+</str>
+</drawstring>
+</smt>
+</statementsequence>
+</body>
+</algorithm>
+<call name="f">
+<actualparams count="0">
+</actualparams>
+</call>
+</workspace>

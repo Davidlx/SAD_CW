@@ -1,0 +1,19 @@
+<workspace checksum="1df52b9b-bbe8-4a81-b645-bbc72e13bfec">
+<algorithm name="f">
+<formalparams count="1">
+<param name="x"/>
+</formalparams>
+<body>
+<return>
+<varref value="x" />
+</return>
+</body>
+</algorithm>
+<call name="f">
+<actualparams count="1">
+<actualparam>
+<literalinteger value="5" />
+</actualparam>
+</actualparams>
+</call>
+</workspace>

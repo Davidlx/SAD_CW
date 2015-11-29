@@ -1,0 +1,58 @@
+<workspace checksum="b2898a9f-47a6-4e67-bd65-1d48affc1e0d">
+<algorithm name="f">
+<formalparams count="1">
+<param name="xs"/>
+</formalparams>
+<body>
+<return>
+<varref value="xs" />
+</return>
+</body>
+</algorithm>
+<algorithm name="g">
+<formalparams count="1">
+<param name="gs"/>
+</formalparams>
+<body>
+<return>
+<call name="f">
+<actualparams count="1">
+<actualparam>
+<listtail>
+<varref value="gs" />
+</listtail>
+</actualparam>
+</actualparams>
+</call>
+</return>
+</body>
+</algorithm>
+<call name="g">
+<actualparams count="1">
+<actualparam>
+<listcons>
+<loperand>
+<literalinteger value="6" />
+</loperand>
+<roperand>
+<listcons>
+<loperand>
+<literalinteger value="36" />
+</loperand>
+<roperand>
+<listcons>
+<loperand>
+<literalinteger value="8" />
+</loperand>
+<roperand>
+<nillist />
+</roperand>
+</listcons>
+</roperand>
+</listcons>
+</roperand>
+</listcons>
+</actualparam>
+</actualparams>
+</call>
+</workspace>

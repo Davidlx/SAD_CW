@@ -1,0 +1,72 @@
+<workspace checksum="303607da-6722-4a11-8502-191b5af09d94">
+<algorithm name="Unnamed Algorithm">
+<formalparams count="0">
+</formalparams>
+<body>
+</body>
+</algorithm>
+<call>
+</call>
+<print>
+</print>
+<input>
+</input>
+<if>
+<condition>
+</condition>
+<tbranch>
+</tbranch>
+<fbranch>
+</fbranch>
+</if>
+<statementsequence count="1">
+<smt>
+</smt>
+</statementsequence>
+<equals>
+<loperand>
+</loperand>
+<roperand>
+</roperand>
+</equals>
+<greater>
+<loperand>
+</loperand>
+<roperand>
+</roperand>
+</greater>
+<multiplication>
+<loperand>
+</loperand>
+<roperand>
+</roperand>
+</multiplication>
+<division>
+<loperand>
+</loperand>
+<roperand>
+</roperand>
+</division>
+<addition>
+<loperand>
+</loperand>
+<roperand>
+</roperand>
+</addition>
+<subtraction>
+<loperand>
+</loperand>
+<roperand>
+</roperand>
+</subtraction>
+<literalinteger value="6" />
+<literalboolean value="true" />
+<literalstring value="rt" />
+<varref value="" />
+<varassign value="">
+</varassign>
+<vardecl value="">
+</vardecl>
+<return>
+</return>
+</workspace>

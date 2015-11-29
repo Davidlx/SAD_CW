@@ -1,0 +1,58 @@
+<workspace checksum="f12bd4f6-b9bf-4c3d-ac67-e48dc97fa30a">
+<algorithm name="countdown">
+<formalparams count="1">
+<param name="x"/>
+</formalparams>
+<body>
+<statementsequence count="2">
+<smt>
+<while>
+<condition>
+<greater>
+<loperand>
+<varref value="x" />
+</loperand>
+<roperand>
+<literalinteger value="0" />
+</roperand>
+</greater>
+</condition>
+<body>
+<statementsequence count="2">
+<smt>
+<print>
+<varref value="x" />
+</print>
+</smt>
+<smt>
+<varassign value="x">
+<subtraction>
+<loperand>
+<varref value="x" />
+</loperand>
+<roperand>
+<literalinteger value="1" />
+</roperand>
+</subtraction>
+</varassign>
+</smt>
+</statementsequence>
+</body>
+</while>
+</smt>
+<smt>
+<print>
+<literalstring value="Liftoff!" />
+</print>
+</smt>
+</statementsequence>
+</body>
+</algorithm>
+<call name="countdown">
+<actualparams count="1">
+<actualparam>
+<literalinteger value="10" />
+</actualparam>
+</actualparams>
+</call>
+</workspace>

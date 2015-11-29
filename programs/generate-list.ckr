@@ -1,0 +1,86 @@
+<workspace checksum="9e0c7298-b3da-4033-9d0f-9f34775ef44c">
+<algorithm name="generateList">
+<formalparams count="2">
+<param name="from"/>
+<param name="to"/>
+</formalparams>
+<body>
+<statementsequence count="4">
+<smt>
+<vardecl value="cur">
+<varref value="to" />
+</vardecl>
+</smt>
+<smt>
+<vardecl value="lst">
+<nillist />
+</vardecl>
+</smt>
+<smt>
+<while>
+<condition>
+<greater>
+<loperand>
+<varref value="cur" />
+</loperand>
+<roperand>
+<subtraction>
+<loperand>
+<varref value="from" />
+</loperand>
+<roperand>
+<literalinteger value="1" />
+</roperand>
+</subtraction>
+</roperand>
+</greater>
+</condition>
+<body>
+<statementsequence count="2">
+<smt>
+<varassign value="lst">
+<listcons>
+<loperand>
+<varref value="cur" />
+</loperand>
+<roperand>
+<varref value="lst" />
+</roperand>
+</listcons>
+</varassign>
+</smt>
+<smt>
+<varassign value="cur">
+<subtraction>
+<loperand>
+<varref value="cur" />
+</loperand>
+<roperand>
+<literalinteger value="1" />
+</roperand>
+</subtraction>
+</varassign>
+</smt>
+</statementsequence>
+</body>
+</while>
+</smt>
+<smt>
+<return>
+<varref value="lst" />
+</return>
+</smt>
+</statementsequence>
+</body>
+</algorithm>
+<call name="generateList">
+<actualparams count="2">
+<actualparam>
+<literalinteger value="3" />
+</actualparam>
+<actualparam>
+<literalinteger value="8" />
+</actualparam>
+</actualparams>
+</call>
+</workspace>

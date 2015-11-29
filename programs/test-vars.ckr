@@ -1,0 +1,45 @@
+<workspace checksum="09a6de4c-3eed-4c6d-84f6-933e3802e19e">
+<algorithm name="increment">
+<formalparams count="1">
+<param name="x"/>
+</formalparams>
+<body>
+<statementsequence count="4">
+<smt>
+<vardecl value="y">
+<varref value="x" />
+</vardecl>
+</smt>
+<smt>
+<print>
+<varref value="y" />
+</print>
+</smt>
+<smt>
+<varassign value="y">
+<addition>
+<loperand>
+<varref value="y" />
+</loperand>
+<roperand>
+<literalinteger value="1" />
+</roperand>
+</addition>
+</varassign>
+</smt>
+<smt>
+<print>
+<varref value="y" />
+</print>
+</smt>
+</statementsequence>
+</body>
+</algorithm>
+<call name="increment">
+<actualparams count="1">
+<actualparam>
+<literalinteger value="6" />
+</actualparam>
+</actualparams>
+</call>
+</workspace>

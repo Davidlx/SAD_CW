@@ -1,0 +1,106 @@
+<workspace checksum="15ba2bb4-0982-4e31-aceb-fddb9306f2e8">
+<algorithm name="not">
+<formalparams count="1">
+<param name="x"/>
+</formalparams>
+<body>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="x" />
+</loperand>
+<roperand>
+<literalboolean value="true" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<return>
+<literalboolean value="false" />
+</return>
+</tbranch>
+<fbranch>
+<return>
+<literalboolean value="true" />
+</return>
+</fbranch>
+</if>
+</body>
+</algorithm>
+<addition>
+<loperand>
+</loperand>
+<roperand>
+</roperand>
+</addition>
+<algorithm name="and">
+<formalparams count="2">
+<param name="x"/>
+<param name="y"/>
+</formalparams>
+<body>
+<if>
+<condition>
+<varref value="x" />
+</condition>
+<tbranch>
+<if>
+<condition>
+<varref value="y" />
+</condition>
+<tbranch>
+<return>
+<literalboolean value="true" />
+</return>
+</tbranch>
+<fbranch>
+<return>
+<literalboolean value="false" />
+</return>
+</fbranch>
+</if>
+</tbranch>
+<fbranch>
+<return>
+<literalboolean value="false" />
+</return>
+</fbranch>
+</if>
+</body>
+</algorithm>
+<call name="not">
+<actualparams count="1">
+<actualparam>
+<literalboolean value="false" />
+</actualparam>
+</actualparams>
+</call>
+<call name="not">
+<actualparams count="1">
+<actualparam>
+<literalboolean value="true" />
+</actualparam>
+</actualparams>
+</call>
+<call name="and">
+<actualparams count="2">
+<actualparam>
+<literalboolean value="true" />
+</actualparam>
+<actualparam>
+<literalboolean value="false" />
+</actualparam>
+</actualparams>
+</call>
+<call name="and">
+<actualparams count="2">
+<actualparam>
+<literalboolean value="true" />
+</actualparam>
+<actualparam>
+<literalboolean value="true" />
+</actualparam>
+</actualparams>
+</call>
+</workspace>

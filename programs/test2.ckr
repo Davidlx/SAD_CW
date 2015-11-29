@@ -1,0 +1,12 @@
+<workspace checksum="3d903a77-75b1-4584-b70b-a90fee0d39c5">
+<algorithm name="return5">
+<formalparams count="1">
+<param name="x"/>
+</formalparams>
+<body>
+<return>
+<literalinteger value="5" />
+</return>
+</body>
+</algorithm>
+</workspace>

@@ -1,0 +1,193 @@
+<workspace checksum="80eb5a19-dbbe-469c-949b-1f619f5aefda">
+<algorithm name="f">
+<formalparams count="1">
+<param name="x"/>
+</formalparams>
+<body>
+<return>
+<literalstring value="alg f" />
+</return>
+</body>
+</algorithm>
+<listtail>
+<varref value="lst" />
+</listtail>
+<listvalue>
+<varref value="lst" />
+</listvalue>
+<listisempty>
+<varref value="lst" />
+</listisempty>
+<vardecl value="lst">
+<listcons>
+<loperand>
+<literalinteger value="42" />
+</loperand>
+<roperand>
+<nillist />
+</roperand>
+</listcons>
+</vardecl>
+<varassign value="lst">
+<nillist />
+</varassign>
+<print>
+<combinestring>
+<loperand>
+<literalinteger value="15" />
+</loperand>
+<roperand>
+<literalstring value="text" />
+</roperand>
+</combinestring>
+</print>
+<statementsequence count="2">
+<smt>
+<print>
+<randint>
+<literalinteger value="6" />
+</randint>
+</print>
+</smt>
+<smt>
+<print>
+<input>
+<literalstring value="fghfgh" />
+</input>
+</print>
+</smt>
+</statementsequence>
+<statementsequence count="3">
+<smt>
+<print>
+<equals>
+<loperand>
+<literalinteger value="13" />
+</loperand>
+<roperand>
+<literalinteger value="14" />
+</roperand>
+</equals>
+</print>
+</smt>
+<smt>
+<print>
+<division>
+<loperand>
+<literalinteger value="15" />
+</loperand>
+<roperand>
+<literalinteger value="16" />
+</roperand>
+</division>
+</print>
+</smt>
+<smt>
+<print>
+<literalstring value="asdfghjkl" />
+</print>
+</smt>
+</statementsequence>
+<statementsequence count="1">
+<smt>
+<print>
+<multiplication>
+<loperand>
+<literalinteger value="7" />
+</loperand>
+<roperand>
+<literalinteger value="8" />
+</roperand>
+</multiplication>
+</print>
+</smt>
+</statementsequence>
+<while>
+<condition>
+<greater>
+<loperand>
+<literalinteger value="11" />
+</loperand>
+<roperand>
+<literalinteger value="12" />
+</roperand>
+</greater>
+</condition>
+<body>
+<print>
+<subtraction>
+<loperand>
+<literalinteger value="1" />
+</loperand>
+<roperand>
+<literalinteger value="2" />
+</roperand>
+</subtraction>
+</print>
+</body>
+</while>
+<if>
+<condition>
+<lesser>
+<loperand>
+<literalinteger value="9" />
+</loperand>
+<roperand>
+<literalinteger value="10" />
+</roperand>
+</lesser>
+</condition>
+<tbranch>
+<print>
+<addition>
+<loperand>
+<literalinteger value="3" />
+</loperand>
+<roperand>
+<literalinteger value="4" />
+</roperand>
+</addition>
+</print>
+</tbranch>
+<fbranch>
+<print>
+<modulus>
+<loperand>
+<literalinteger value="5" />
+</loperand>
+<roperand>
+<literalinteger value="6" />
+</roperand>
+</modulus>
+</print>
+</fbranch>
+</if>
+<call name="f">
+<actualparams count="1">
+<actualparam>
+<call name="f">
+<actualparams count="1">
+<actualparam>
+<call name="f">
+<actualparams count="1">
+<actualparam>
+<listtail>
+<listcons>
+<loperand>
+<literalinteger value="321" />
+</loperand>
+<roperand>
+<nillist />
+</roperand>
+</listcons>
+</listtail>
+</actualparam>
+</actualparams>
+</call>
+</actualparam>
+</actualparams>
+</call>
+</actualparam>
+</actualparams>
+</call>
+</workspace>

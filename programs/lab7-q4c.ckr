@@ -1,0 +1,167 @@
+<workspace checksum="f338c333-6724-40ab-83b8-5654e150008d">
+<algorithm name="displaymenu">
+<formalparams count="0">
+</formalparams>
+<body>
+<statementsequence count="2">
+<smt>
+<print>
+<literalstring value="1) Guess the number" />
+</print>
+</smt>
+<smt>
+<print>
+<literalstring value="2) Quit" />
+</print>
+</smt>
+</statementsequence>
+</body>
+</algorithm>
+<algorithm name="mainprogram">
+<formalparams count="0">
+</formalparams>
+<body>
+<statementsequence count="2">
+<smt>
+<call name="displaymenu">
+<actualparams count="0">
+</actualparams>
+</call>
+</smt>
+<smt>
+<if>
+<condition>
+<equals>
+<loperand>
+<input>
+<literalstring value="Enter Choice" />
+</input>
+</loperand>
+<roperand>
+<literalinteger value="1" />
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<statementsequence count="4">
+<smt>
+<call name="playgame">
+<actualparams count="0">
+</actualparams>
+</call>
+</smt>
+<smt>
+<call name="displaymenu">
+<actualparams count="0">
+</actualparams>
+</call>
+</smt>
+<smt>
+<call name="mainprogram">
+<actualparams count="0">
+</actualparams>
+</call>
+</smt>
+<smt>
+<print>
+<literalstring value="Quiting..." />
+</print>
+</smt>
+</statementsequence>
+</tbranch>
+<fbranch>
+<print>
+<literalstring value="Quiting..." />
+</print>
+</fbranch>
+</if>
+</smt>
+</statementsequence>
+</body>
+</algorithm>
+<call name="mainprogram">
+<actualparams count="0">
+</actualparams>
+</call>
+<algorithm name="playgame">
+<formalparams count="0">
+</formalparams>
+<body>
+<statementsequence count="2">
+<smt>
+<vardecl value="guess">
+<input>
+<literalstring value="Enter guess between 1 and 6" />
+</input>
+</vardecl>
+</smt>
+<smt>
+<if>
+<condition>
+<greater>
+<loperand>
+<varref value="guess" />
+</loperand>
+<roperand>
+<literalinteger value="6" />
+</roperand>
+</greater>
+</condition>
+<tbranch>
+<print>
+<literalstring value="Sorry, your guess was not in-between 1 and 6" />
+</print>
+</tbranch>
+<fbranch>
+<call name="checkguess">
+<actualparams count="1">
+<actualparam>
+<varref value="guess" />
+</actualparam>
+</actualparams>
+</call>
+</fbranch>
+</if>
+</smt>
+</statementsequence>
+</body>
+</algorithm>
+<algorithm name="checkguess">
+<formalparams count="1">
+<param name="guess"/>
+</formalparams>
+<body>
+<if>
+<condition>
+<equals>
+<loperand>
+<varref value="guess" />
+</loperand>
+<roperand>
+<addition>
+<loperand>
+<randint>
+<literalinteger value="5" />
+</randint>
+</loperand>
+<roperand>
+<literalinteger value="1" />
+</roperand>
+</addition>
+</roperand>
+</equals>
+</condition>
+<tbranch>
+<print>
+<literalstring value="Correct!" />
+</print>
+</tbranch>
+<fbranch>
+<print>
+<literalstring value="Wrong!" />
+</print>
+</fbranch>
+</if>
+</body>
+</algorithm>
+</workspace>

@@ -1,0 +1,22 @@
+<workspace checksum="e1d7e4ec-d0b5-4beb-bc62-a80ce4f08c84">
+<algorithm name="test" xpos="224" ypos="178" >
+<comment>Test comment.
+Can this
+be loaded?
+
+If I type a really, really long line into the comment box then will the layout still be ok?
+
+Some
+extra
+stuff
+to
+force
+vertical
+scrolling
+too.</comment>
+<formalparams count="0">
+</formalparams>
+<body>
+</body>
+</algorithm>
+</workspace>
