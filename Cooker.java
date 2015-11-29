@@ -647,7 +647,8 @@ public class Cooker extends JFrame
 
    String[][] flowButtons = { {"org.scotek.vpl.IfWorkspaceObject", "If Statement", "If", "Statement", "Checks condition and runs left part if true, right part if false"},
 			      {"org.scotek.vpl.WhileWorkspaceObject", "While Statement", "While", "Statement", "Repeatedly runs the body of the loop while the condition is true.<br>The body may be executed zero times if the condition is initially false."},
-			      {"org.scotek.vpl.StatementSequenceWorkspaceObject", "Statement Sequence", "Statement Sequence", "Statement", "Sequentially run a sequence of statements."} };
+			      {"org.scotek.vpl.StatementSequenceWorkspaceObject", "Statement Sequence", "Statement Sequence", "Statement", "Sequentially run a sequence of statements."},
+			  	  {"org.scotek.vpl.RepeatWorkspaceObject", "Repeat Statement", "Repeat", "Statement", "Run a sequence of statements for given number of times"} };
    JCompactablePanel flowLauncher()
    {
       return createStandardLauncher("Flow Control", flowButtons);
