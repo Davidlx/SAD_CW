@@ -287,8 +287,6 @@ class Workspace extends JPanel
       int padding = 10;
 
       Point returnPoint = new Point(10,10);
-
-      System.out.println(comSize);
       WorkspaceObject[] objs = new WorkspaceObject[compCount];
       for(int i = 0; i < compCount; i++){
          objs[i] = (WorkspaceObject)getComponent(i);
@@ -305,8 +303,6 @@ class Workspace extends JPanel
                returnPoint.setLocation(objs[i].getX()+temp_size.getWidth()+padding,objs[i].getY());
             }
          }
-
-         System.out.println(objs[i].getSize()+" "+objs[i].getX()+" "+objs[i].getY());
       }
 
       return returnPoint;
