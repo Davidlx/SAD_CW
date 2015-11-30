@@ -7,7 +7,7 @@ import javax.swing.event.*;
 
 import java.util.Vector;
 import java.util.UUID;
-import java.io.PrintWriter;
+import java.io.*;
 import org.w3c.dom.*;
 
 import org.scotek.util.swing.XYLayout;
@@ -18,6 +18,9 @@ class Workspace extends JPanel
    static Workspace workspaceInstance;
    static UUID currentUUID;
    boolean useColor = true;
+   private String currentContent;
+   private StringWriter stringWriter;
+   private PrintWriter writer;
 
    public Workspace()
    {
@@ -25,6 +28,10 @@ class Workspace extends JPanel
       currentUUID = UUID.randomUUID();
       this.setLayout(new XYLayout());
       this.setOpaque(true);
+      stringWriter = new StringWriter();
+      writer = new PrintWriter(stringWriter);
+
+      currentContent = getCurrentWorkspace();
    }
 
    // wipe the workspace clean, as if the program was just started.
@@ -65,14 +72,19 @@ class Workspace extends JPanel
    // welcome to the world of ad-hoc, horrible, "xml" :)
    public void save(PrintWriter out)
    {
+      printWorkspace(out);
+      currentContent = getCurrentWorkspace();
+   }
+
+   private void printWorkspace(PrintWriter out){
       out.println("<workspace checksum=\"" + currentUUID + "\">");
       int compCount = getComponentCount();
 //      System.err.println("Component count is " + compCount);
       WorkspaceObject[] objs = new WorkspaceObject[compCount];
       for(int i = 0; i < compCount; i++)
       {
-	 objs[i] = (WorkspaceObject)getComponent(i);
-	 objs[i].save(out);
+    objs[i] = (WorkspaceObject)getComponent(i);
+    objs[i].save(out);
       }
       
       out.println("</workspace>");
@@ -178,6 +190,7 @@ class Workspace extends JPanel
       CallWorkspaceObject.clearLoadingQueue();
 
       importProgram(node);
+      currentContent = getCurrentWorkspace();
    }
    
    public void importProgram(Node node) throws ProgramLoadingException
@@ -322,9 +335,28 @@ class Workspace extends JPanel
       if (y2+size2.height+padding>y){
          return true;
       }
-         
-
       return false;
+   }
+
+   private String getCurrentWorkspace(){
+      printWorkspace(writer);
+
+      String temp = stringWriter.toString();
+
+      stringWriter = new StringWriter();
+      writer = new PrintWriter(stringWriter);
+
+      System.out.println(temp);
+      return temp;
+   }
+
+   public boolean isChanged(){
+      String tempContent = getCurrentWorkspace();
+      if (tempContent.contentEquals(currentContent)) {
+         return false;
+      }else{
+         return true;
+      }
    }
 
 }

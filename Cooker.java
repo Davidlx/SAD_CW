@@ -120,11 +120,14 @@ public class Cooker extends JFrame
    boolean maybeQuit()
    {
       // TODO check if file needs to be saved
-      int answer = JOptionPane.showConfirmDialog(null, "Are you sure you want to continue?\nAny unsaved work will be lost.", "Unsaved Work?", JOptionPane.OK_CANCEL_OPTION, JOptionPane.WARNING_MESSAGE);
-      if(answer != JOptionPane.YES_OPTION)
-	 return false;
-      else
-	 return true;
+   	if (workspace.isChanged()) {
+   		int answer = JOptionPane.showConfirmDialog(null, "Are you sure you want to continue?\nAny unsaved work will be lost.", "Unsaved Work?", JOptionPane.OK_CANCEL_OPTION, JOptionPane.WARNING_MESSAGE);
+	    if(answer != JOptionPane.YES_OPTION)
+			return false;
+	    else
+			return true;
+   	}
+    return true; 
    }
 
    JMenuBar createMenus()
