@@ -348,7 +348,7 @@ class Workspace extends JPanel
       stringWriter = new StringWriter();
       writer = new PrintWriter(stringWriter);
 
-      System.out.println(temp);
+      //System.out.println(temp);
       return temp;
    }
 
