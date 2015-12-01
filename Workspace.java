@@ -103,6 +103,8 @@ class Workspace extends JPanel
 	 return IfWorkspaceObject.load(node);
       else if(name.equals("while"))
 	 return WhileWorkspaceObject.load(node);
+      else if(name.equals("repeat"))
+    return RepeatWorkspaceObject.load(node);
       else if(name.equals("equals"))
 	 return EqualsOperatorWorkspaceObject.load(node);
       else if(name.equals("greater"))
