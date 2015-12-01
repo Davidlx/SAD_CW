@@ -878,6 +878,44 @@ class WhileStatement extends Statement
    }
 }
 
+class RepeatStatement extends Statement
+{
+   private Expression interations;
+   private Statement body;
+
+   public void setIteration(Expression e)
+   {
+      interations = e;
+   }
+   
+   public void setBody(Statement s)
+   {
+      body = s;
+   }
+
+   public void performAction()
+   {
+      if(interations == null || body == null)
+         throw new NotEnoughArgumentsException("Empty space in Repeat statement.", this);
+
+      while(true)
+      {
+         if(Call.abortProgram)
+            throw new ExecutionAbortedException();
+
+         Object val = interations.getValue();
+         if(!(val instanceof Integer)||(int)val<=0)
+            throw new InvalidArgumentTypeException("Number of iterations must be instance of integers with positive numbers");
+    
+         int b = (int)val;
+         while (b>0) {
+            body.performAction();
+            b--;
+         }    
+      }
+   }
+}
+
 // Use this to call another.  It takes the actual parameters and sets them up as the called algorithm's formal parameters.
 class Call extends Statement implements Expression
 {

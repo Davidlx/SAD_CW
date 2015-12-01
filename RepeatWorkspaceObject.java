@@ -11,7 +11,7 @@ import org.w3c.dom.*;
 
 class RepeatWorkspaceObject extends WorkspaceObject
 {
-WhileStatement whileSmt;
+   RepeatStatement repeatSmt;
    PartSink conditionSink, bodySink;
 
    public RepeatWorkspaceObject(Workspace w)
@@ -21,7 +21,7 @@ WhileStatement whileSmt;
 
    void earlyInit(Object[] extras)
    {
-      whileSmt = new WhileStatement();
+      repeatSmt = new RepeatStatement();
    }
 
    // if statement has 3 sinks, 1 for condition, 1 for true branch, 1 for false branch
@@ -38,14 +38,14 @@ WhileStatement whileSmt;
 	    WorkspaceObject c = conditionSink.getContainedPart();
 	    Object o = c.getPart();
 	    Expression exp = (Expression)o;
-	    whileSmt.setCondition(exp);
+	    repeatSmt.setIteration(exp);
 	 }
 	 public void split()
 	 {
-	    whileSmt.setCondition(null);
+	    repeatSmt.setIteration(null);
 	 }
       });
-      conditionSink.setToolTipText("<html>Condition that controls the loop.<br>The loop body will be executed while this is true</html>");
+      conditionSink.setToolTipText("<html>Number of exicution that requre the loop.<br>The loop body will be executed while this is true</html>");
       p.add(conditionSink, BorderLayout.NORTH);
       
       // body sink
@@ -56,11 +56,11 @@ WhileStatement whileSmt;
 	    WorkspaceObject c = bodySink.getContainedPart();
 	    Object o = c.getPart();
 	    Statement exp = (Statement)o;
-	    whileSmt.setBody(exp);
+	    repeatSmt.setBody(exp);
 	 }
 	 public void split()
 	 {
-	    whileSmt.setBody(null);
+	    repeatSmt.setBody(null);
 	 }
       });
       bodySink.setToolTipText("The body of the loop");
@@ -75,12 +75,12 @@ WhileStatement whileSmt;
    }
    Object getPart()
    {
-      return whileSmt;
+      return repeatSmt;
    }
 
    String getWorkspaceObjectName()
    {
-      return "While";
+      return "Repeat";
    }
 
    void save(PrintWriter out)
@@ -98,7 +98,7 @@ WhileStatement whileSmt;
       out.println("</body>");
       out.println("</repeat>");
    }
-   static WhileWorkspaceObject load(Node node) throws ProgramLoadingException
+   static RepeatWorkspaceObject load(Node node) throws ProgramLoadingException
    {
       if(!node.getNodeName().equals("repeat"))
 	 throw new ProgramLoadingException();
@@ -138,7 +138,7 @@ WhileStatement whileSmt;
 
    public WorkspaceObject getWorkspaceObjectForPart(Object part)  //EEH
    {
-      if(part == whileSmt)
+      if(part == repeatSmt)
 	 return this;
 
       WorkspaceObject wo = null;
