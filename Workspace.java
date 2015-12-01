@@ -5,6 +5,7 @@ import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.event.*;
 
+import java.util.ArrayList;
 import java.util.Vector;
 import java.util.UUID;
 import java.io.*;
@@ -83,8 +84,8 @@ class Workspace extends JPanel
       WorkspaceObject[] objs = new WorkspaceObject[compCount];
       for(int i = 0; i < compCount; i++)
       {
-    objs[i] = (WorkspaceObject)getComponent(i);
-    objs[i].save(out);
+          objs[i] = (WorkspaceObject)getComponent(i);
+          objs[i].save(out);
       }
       
       out.println("</workspace>");
@@ -299,10 +300,13 @@ class Workspace extends JPanel
       int compCount = getComponentCount();
       int height = comSize.height;
       int width = comSize.width;
-      int padding = 10;
 
-      Point returnPoint = new Point(10,10);
       WorkspaceObject[] objs = new WorkspaceObject[compCount];
+      java.util.List<Dimension> comSizes = new ArrayList<Dimension>();
+      java.util.List<Integer> positionX = new ArrayList<Integer>();
+      java.util.List<Integer> positionY = new ArrayList<Integer>();
+
+      //add the actual
       for(int i = 0; i < compCount; i++){
          objs[i] = (WorkspaceObject)getComponent(i);
 
@@ -310,31 +314,79 @@ class Workspace extends JPanel
          int posi_x = objs[i].getX();
          int posi_y = objs[i].getY();
 
-         //if is overlapping
-         if (isOverLapping(comSize,returnPoint.x,returnPoint.y,temp_size,posi_x,posi_y,padding)) {
-            if (objs[i].getX()>objs[i].getY()) {
-               returnPoint.setLocation(objs[i].getX(),objs[i].getY()+temp_size.getHeight()+padding);
-            }else{
-               returnPoint.setLocation(objs[i].getX()+temp_size.getWidth()+padding,objs[i].getY());
-            }
-         }
+         comSizes.add(temp_size);
+         positionX.add(posi_x);
+         positionY.add(posi_y);
       }
+
+      System.out.println(comSizes.toString());
+      System.out.println(positionX.toString());
+      System.out.println(positionY.toString());
+
+      Point returnPoint = findRightPosi(comSize,comSizes,positionX,positionY);
 
       return returnPoint;
    }
 
+   private Point findRightPosi(Dimension comSize, java.util.List<Dimension> comSizes, java.util.List<Integer> positionX ,java.util.List<Integer> positionY){
+      Point returnPoint = new Point(10,10);
+
+      return findRightPosiHelper(comSize,comSizes,positionX,positionY,returnPoint);
+   }
+
+   private Point findRightPosiHelper(Dimension comSize, java.util.List<Dimension> comSizes, java.util.List<Integer> positionX ,java.util.List<Integer> positionY, Point returnPoint) {
+      while (isOverlapped(comSize,comSizes,positionX,positionY,returnPoint)) {
+         //chose a new place
+         System.out.println("overlapped");
+         System.out.println(returnPoint);
+         if (returnPoint.x==10) {
+            //border
+            returnPoint.x = 10+returnPoint.y;
+            returnPoint.y = 10;
+         }else{
+            returnPoint.x -= 1;
+            returnPoint.y += 1;
+         }
+         System.out.println(returnPoint);
+      }
+      return returnPoint;
+   }
+
+   private boolean isOverlapped(Dimension comSize, java.util.List<Dimension> comSizes, java.util.List<Integer> positionX ,java.util.List<Integer> positionY, Point returnPoint){
+      int size = comSizes.size();
+      int padding = 10;
+      for (int counter = 0;counter<size;counter++){
+         if (isOverLapping(comSize, returnPoint.x,returnPoint.y,comSizes.get(counter),positionX.get(counter),positionY.get(counter),padding)){
+            return true;
+         }
+      }
+      return false;
+   }
 
    public boolean isOverLapping(Dimension size, int x, int y, Dimension size2, int x2, int y2, int padding){
-      if (x+size.width+padding>x2){
+      int x_max = x+size.width;
+      int y_max = y+size.height;
+
+      int x2_min = x2-padding;
+      int x2_max = x2+size2.width+padding;
+      int y2_min = y2-padding;
+      int y2_max = y2+size2.height+padding;
+
+
+      if (x<x2_max&&x>x2_min&&y<y2_max&&y>y2_min) {
+         System.out.println("1");
          return true;
       }
-      if (x2+size2.width+padding>x){
+      if (x_max<x2_max&&x_max>x2_min&&y<y2_max&&y>y2_min) {
+         System.out.println("2");
          return true;
       }
-      if (y+size.height+padding>y2){
+      if (x<x2_max&&x>x2_min&&y_max<y2_max&&y_max>y2_min) {
+         System.out.println("3");
          return true;
       }
-      if (y2+size2.height+padding>y){
+      if (x_max<x2_max&&x_max>x2_min&&y_max<y2_max&&y_max>y2_min) {
+         System.out.println("4");
          return true;
       }
       return false;
