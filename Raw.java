@@ -906,9 +906,9 @@ class RepeatStatement extends Statement
          Object val = interations.getValue();
          if(!(val instanceof Integer))
             throw new InvalidArgumentTypeException("Number of iterations must be instance of integers with positive numbers");
-         if ((int)val<=0)
+         if ((Integer)val<=0)
             throw new InvalidArgumentTypeException("Number of iterations must be instance of integers with positive numbers");
-         int b = (int)val;
+         int b = (Integer)val;
          while (b>0) {
             body.performAction();
             b--;
