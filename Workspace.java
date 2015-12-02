@@ -319,10 +319,6 @@ class Workspace extends JPanel
          positionY.add(posi_y);
       }
 
-      System.out.println(comSizes.toString());
-      System.out.println(positionX.toString());
-      System.out.println(positionY.toString());
-
       Point returnPoint = findRightPosi(comSize,comSizes,positionX,positionY);
 
       return returnPoint;
@@ -337,8 +333,6 @@ class Workspace extends JPanel
    private Point findRightPosiHelper(Dimension comSize, java.util.List<Dimension> comSizes, java.util.List<Integer> positionX ,java.util.List<Integer> positionY, Point returnPoint) {
       while (isOverlapped(comSize,comSizes,positionX,positionY,returnPoint)) {
          //chose a new place
-         System.out.println("overlapped");
-         System.out.println(returnPoint);
          if (returnPoint.x==10) {
             //border
             returnPoint.x = 10+returnPoint.y;
@@ -347,7 +341,6 @@ class Workspace extends JPanel
             returnPoint.x -= 1;
             returnPoint.y += 1;
          }
-         System.out.println(returnPoint);
       }
       return returnPoint;
    }
@@ -374,19 +367,15 @@ class Workspace extends JPanel
 
 
       if (x<x2_max&&x>x2_min&&y<y2_max&&y>y2_min) {
-         System.out.println("1");
          return true;
       }
       if (x_max<x2_max&&x_max>x2_min&&y<y2_max&&y>y2_min) {
-         System.out.println("2");
          return true;
       }
       if (x<x2_max&&x>x2_min&&y_max<y2_max&&y_max>y2_min) {
-         System.out.println("3");
          return true;
       }
       if (x_max<x2_max&&x_max>x2_min&&y_max<y2_max&&y_max>y2_min) {
-         System.out.println("4");
          return true;
       }
       return false;
