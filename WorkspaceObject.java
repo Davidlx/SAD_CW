@@ -189,7 +189,8 @@ abstract class WorkspaceObject extends JPanel implements ActionListener
 	       if(pt.y < 0)  pt.setLocation(pt.x, 0);
 	       ws.invalidate(); // invalidate workspace somehow?? would rather use some parent thing than this
 	       ws.getParent().validate(); // this gets JScrollPane to change it's scrollbars :)
-	    }
+	       ws.drag();
+       }
 	 }
       });
    }
@@ -244,7 +245,7 @@ abstract class WorkspaceObject extends JPanel implements ActionListener
       if(isCombined)
       {
 	 combinedBy.split();
-	 pt.setLocation(200, 200); // TODO should be random, fixed for texting
+    pt = ws.getFreePosition(this.preferredSize());
 	 Workspace.getWorkspace().add(this, pt);
 	 this.setVisible(true);
 	 

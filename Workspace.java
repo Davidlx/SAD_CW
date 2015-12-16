@@ -19,6 +19,7 @@ class Workspace extends JPanel
    static Workspace workspaceInstance;
    static UUID currentUUID;
    boolean useColor = true;
+   boolean isDragged = false;
    private String currentContent;
    private StringWriter stringWriter;
    private PrintWriter writer;
@@ -75,6 +76,7 @@ class Workspace extends JPanel
    {
       printWorkspace(out);
       currentContent = getCurrentWorkspace();
+      isDragged = false;
    }
 
    private void printWorkspace(PrintWriter out){
@@ -194,6 +196,7 @@ class Workspace extends JPanel
 
       importProgram(node);
       currentContent = getCurrentWorkspace();
+      isDragged = false;
    }
    
    public void importProgram(Node node) throws ProgramLoadingException
@@ -396,10 +399,14 @@ class Workspace extends JPanel
    public boolean isChanged(){
       String tempContent = getCurrentWorkspace();
       if (tempContent.contentEquals(currentContent)) {
-         return false;
+         return false||isDragged;
       }else{
          return true;
       }
+   }
+
+   public void drag(){
+      isDragged = true;
    }
 
 }

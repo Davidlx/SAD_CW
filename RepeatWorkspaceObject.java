@@ -12,7 +12,7 @@ import org.w3c.dom.*;
 class RepeatWorkspaceObject extends WorkspaceObject
 {
    RepeatStatement repeatSmt;
-   PartSink conditionSink, bodySink;
+   PartSink repeatSink, bodySink;
 
    public RepeatWorkspaceObject(Workspace w)
    {
@@ -31,11 +31,11 @@ class RepeatWorkspaceObject extends WorkspaceObject
       p.setLayout(new BorderLayout());
 
       // condition sink
-      conditionSink = new PartSink(PartType.EXPRESSION_PART);
-      conditionSink.addCombineListener(new CombineListener() {
+      repeatSink = new PartSink(PartType.EXPRESSION_PART);
+      repeatSink.addCombineListener(new CombineListener() {
 	 public void combined()
 	 {
-	    WorkspaceObject c = conditionSink.getContainedPart();
+	    WorkspaceObject c = repeatSink.getContainedPart();
 	    Object o = c.getPart();
 	    Expression exp = (Expression)o;
 	    repeatSmt.setIteration(exp);
@@ -45,8 +45,8 @@ class RepeatWorkspaceObject extends WorkspaceObject
 	    repeatSmt.setIteration(null);
 	 }
       });
-      conditionSink.setToolTipText("<html>Number of exicution that requre the loop.<br>The loop body will be executed while this is true</html>");
-      p.add(conditionSink, BorderLayout.NORTH);
+      repeatSink.setToolTipText("<html>Number of exicution that requre the loop.<br>The loop body will be executed while this is true</html>");
+      p.add(repeatSink, BorderLayout.NORTH);
       
       // body sink
       bodySink = new PartSink(PartType.STATEMENT_PART);
@@ -87,7 +87,7 @@ class RepeatWorkspaceObject extends WorkspaceObject
    {
       out.println("<repeat>");
       out.println("<times>");
-      WorkspaceObject c = conditionSink.getContainedPart();
+      WorkspaceObject c = repeatSink.getContainedPart();
       if(c != null)
 	 c.save(out);
       out.println("</times>");
@@ -115,7 +115,7 @@ class RepeatWorkspaceObject extends WorkspaceObject
 	    WorkspaceObject condObj = Workspace.dispatchLoad(condNode);
 	    if(condObj != null)
 	    {
-	       obj.conditionSink.progCombine(condObj);
+	       obj.repeatSink.progCombine(condObj);
 	    }
 	 }
       }
@@ -142,7 +142,7 @@ class RepeatWorkspaceObject extends WorkspaceObject
 	 return this;
 
       WorkspaceObject wo = null;
-      wo = conditionSink.getContainedPart().getWorkspaceObjectForPart(part);
+      wo = repeatSink.getContainedPart().getWorkspaceObjectForPart(part);
       if(wo != null)
 	 return wo;
       wo = bodySink.getContainedPart().getWorkspaceObjectForPart(part);
