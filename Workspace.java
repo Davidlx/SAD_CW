@@ -23,6 +23,7 @@ class Workspace extends JPanel
    private String currentContent;
    private StringWriter stringWriter;
    private PrintWriter writer;
+   private int padding = 10;
 
    public Workspace()
    {
@@ -313,7 +314,7 @@ class Workspace extends JPanel
       for(int i = 0; i < compCount; i++){
          objs[i] = (WorkspaceObject)getComponent(i);
 
-         Dimension temp_size = objs[i].getSize();
+         Dimension temp_size = objs[i].preferredSize();
          int posi_x = objs[i].getX();
          int posi_y = objs[i].getY();
 
@@ -336,10 +337,10 @@ class Workspace extends JPanel
    private Point findRightPosiHelper(Dimension comSize, java.util.List<Dimension> comSizes, java.util.List<Integer> positionX ,java.util.List<Integer> positionY, Point returnPoint) {
       while (isOverlapped(comSize,comSizes,positionX,positionY,returnPoint)) {
          //chose a new place
-         if (returnPoint.x==10) {
+         if (returnPoint.x==padding) {
             //border
-            returnPoint.x = 10+returnPoint.y;
-            returnPoint.y = 10;
+            returnPoint.x = 1+returnPoint.y;
+            returnPoint.y = padding;
          }else{
             returnPoint.x -= 1;
             returnPoint.y += 1;
@@ -350,16 +351,15 @@ class Workspace extends JPanel
 
    private boolean isOverlapped(Dimension comSize, java.util.List<Dimension> comSizes, java.util.List<Integer> positionX ,java.util.List<Integer> positionY, Point returnPoint){
       int size = comSizes.size();
-      int padding = 10;
       for (int counter = 0;counter<size;counter++){
-         if (isOverLapping(comSize, returnPoint.x,returnPoint.y,comSizes.get(counter),positionX.get(counter),positionY.get(counter),padding)){
+         if (isOverLapping(comSize, returnPoint.x,returnPoint.y,comSizes.get(counter),positionX.get(counter),positionY.get(counter))){
             return true;
          }
       }
       return false;
    }
 
-   public boolean isOverLapping(Dimension size, int x, int y, Dimension size2, int x2, int y2, int padding){
+   public boolean isOverLapping(Dimension size, int x, int y, Dimension size2, int x2, int y2){
       int x_max = x+size.width;
       int y_max = y+size.height;
 
@@ -368,20 +368,11 @@ class Workspace extends JPanel
       int y2_min = y2-padding;
       int y2_max = y2+size2.height+padding;
 
+      if (x_max<x2_min||x>x2_max||y_max<y2_min||y>y2_max) {
+         return false;
+      }
 
-      if (x<x2_max&&x>x2_min&&y<y2_max&&y>y2_min) {
-         return true;
-      }
-      if (x_max<x2_max&&x_max>x2_min&&y<y2_max&&y>y2_min) {
-         return true;
-      }
-      if (x<x2_max&&x>x2_min&&y_max<y2_max&&y_max>y2_min) {
-         return true;
-      }
-      if (x_max<x2_max&&x_max>x2_min&&y_max<y2_max&&y_max>y2_min) {
-         return true;
-      }
-      return false;
+      return true;
    }
 
    private String getCurrentWorkspace(){
